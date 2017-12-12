@@ -1,0 +1,63 @@
+﻿<e:ProgressNodeBase x:Class="ProgressNode"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:e="clr-namespace:Errisy"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <e:ProgressNodeBase.Template>
+        <ControlTemplate TargetType="e:ProgressNodeBase">
+            <Rectangle>
+                <Rectangle.Fill>
+                    <VisualBrush>
+                        <VisualBrush.Visual>
+                            <Grid>
+                                <Path Data="M 50,50 Q 20,5 10,10 Q 5,20 50,50" Fill="Gray" Name="S1">
+                                    <Path.RenderTransform>
+                                        <RotateTransform CenterX="50" CenterY="50" Angle="0"/>
+                                    </Path.RenderTransform>
+                                </Path>
+                                <Path Data="M 50,50 Q 20,5 10,10 Q 5,20 50,50" Fill="Gray" Name="S2">
+                                    <Path.RenderTransform>
+                                        <RotateTransform CenterX="50" CenterY="50" Angle="45"/>
+                                    </Path.RenderTransform>
+                                </Path>
+                                <Path Data="M 50,50 Q 20,5 10,10 Q 5,20 50,50" Fill="Gray" Name="S3">
+                                    <Path.RenderTransform>
+                                        <RotateTransform CenterX="50" CenterY="50" Angle="90"/>
+                                    </Path.RenderTransform>
+                                </Path>
+                                <Path Data="M 50,50 Q 20,5 10,10 Q 5,20 50,50" Fill="Gray" Name="S4">
+                                    <Path.RenderTransform>
+                                        <RotateTransform CenterX="50" CenterY="50" Angle="135"/>
+                                    </Path.RenderTransform>
+                                </Path>
+                                <Path Data="M 50,50 Q 20,5 10,10 Q 5,20 50,50" Fill="Gray" Name="S5">
+                                    <Path.RenderTransform>
+                                        <RotateTransform CenterX="50" CenterY="50" Angle="180"/>
+                                    </Path.RenderTransform>
+                                </Path>
+                                <Path Data="M 50,50 Q 20,5 10,10 Q 5,20 50,50" Fill="Gray" Name="S6">
+                                    <Path.RenderTransform>
+                                        <RotateTransform CenterX="50" CenterY="50" Angle="225"/>
+                                    </Path.RenderTransform>
+                                </Path>
+                                <Path Data="M 50,50 Q 20,5 10,10 Q 5,20 50,50" Fill="Gray" Name="S7">
+                                    <Path.RenderTransform>
+                                        <RotateTransform CenterX="50" CenterY="50" Angle="270"/>
+                                    </Path.RenderTransform>
+                                </Path>
+                                <Path Data="M 50,50 Q 20,5 10,10 Q 5,20 50,50" Fill="Gray" Name="S8">
+                                    <Path.RenderTransform>
+                                        <RotateTransform CenterX="50" CenterY="50" Angle="315"/>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Grid>
+                        </VisualBrush.Visual>
+                    </VisualBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </ControlTemplate>
+    </e:ProgressNodeBase.Template>
+</e:ProgressNodeBase>

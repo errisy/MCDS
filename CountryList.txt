@@ -1,0 +1,224 @@
+Afghanistan
+Albania
+Algeria
+Andorra
+Angola
+Antigua and Barbuda
+Argentina
+Armenia
+Australia - Eastern States (New South Wales, Victoria, Australian Capital Territory, Tasmania, South Australia)
+Australia - Western States (Western Australia, Northern Territory)
+Austria
+Azerbaijan
+Bahamas
+Bahrain
+Bangladesh
+Barbados
+Belarus
+Belgium
+Belize
+Benin
+Bhutan
+Bosnia and Herzegovina
+Botswana
+Brazil - North Region (Acre, Amap¨¢, Amazonas, Par¨¢, Rond?nia, Roraima and Tocantins)
+Brazil - Northeast Region (Maranh?o, Piau¨ª, Cear¨¢, Rio Grande do Norte, Para¨ªba, Pernambuco, Alagoas, Sergipe and Bahia)
+Brazil - Central-West Region (Goi¨¢s, Mato Grosso and Mato Grosso do Sul; along with Distrito Federal)
+Brazil - Southeast Region (Esp¨ªrito Santo, Minas Gerais, Rio de Janeiro and S?o Paulo)
+Brazil - South Region (Paran¨¢, Santa Catarina and Rio Grande do Sul)
+Brunei Darussalam
+Bulgaria
+Burkina Faso
+Burundi
+Cambodia
+Cameroon
+Canada - Atlantic Canada (New Brunswick, Prince Edward Island, Nova Scotia, Newfoundland and Labrador)
+Canada - Quebec (Quebec)
+Canada - Ontario (Ontario)
+Canada - Saskatchewan & Manitoba (Manitoba, Saskatchewan)
+Canada - Alberta (Alberta)
+Canada - British Columbia (British Columbia)
+Canada - Northern Canada (Yukon, Northwest Territories, Nunavut)
+Cape Verde
+Central African Republic
+Chad
+Chile
+China - North China (Beijing, Tianjin, Hebei, Shanxi, Neimenggu)
+China - East China (Shanghai, Shandong, Jiangsu, Anhui, Zhejiang, Fujian)
+China - South China (Guangdong, Guangxi, Hainan)
+China - Northeast China (Liaoning, Jilin, Heilongjiang)
+China - South Central China (Hubei, Hunan, Henan, Jiangxi)
+China - Southwest China (Sichuan, Yunnan, Guizhou, Xizang, Chongqing)
+China - Northwest China (Ningxiq, Xinjiang, Qinghal, Shanxi, Gansu)
+China - Hondkong
+China - Macau
+China - Taiwan
+Colombia
+Comoros
+Congo
+Cook Islands
+Costa Rica
+Croatia
+Cuba
+Cyprus
+Czech Republic
+Democratic Republic of the Congo
+Denmark
+Djibouti
+Dominica
+Dominican Republic
+Ecuador
+Egypt
+El Salvador
+Equatorial Guinea
+Eritrea
+Estonia
+Ethiopia
+Fiji
+Finland
+France
+Gabon
+Gambia
+Georgia
+Germany
+Ghana
+Greece
+Grenada
+Guatemala
+Guinea
+Guyana
+Haiti
+Honduras
+Hungary
+Iceland
+India - East India (West Bengal, Orissa, Bihar and Jharkhand)
+India - Northeast India (Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Tripura)
+India - North India (Jammu and Kashmir, Himachal Pradesh, Uttarakhand, Haryana, Punjab, Rajasthan, Uttar Pradesh, Bihar, Jharkhand, Chhattisgarh and Madhya Pradesh)
+India - South India (Andhra Pradesh, Karnataka, Kerala, Tamil Nadu, Pondicherry, Lakshadweep)
+India - West India (Maharashtra, Gujarat, Goa, Dadra and Nagar Haveli, Daman and Diu)
+Indonesia
+Iraq
+Ireland
+Israel
+Italy
+Jamaica
+Japan
+Jordan
+Kazakhstan
+Kenya
+Kiribati
+Kuwait
+Kyrgyzstan
+Latvia
+Lebanon
+Lesotho
+Liberia
+Libya
+Lithuania
+Luxembourg
+Madagascar
+Malawi
+Malaysia
+Maldives
+Mali
+Malta
+Marshall Islands
+Mauritania
+Mauritius
+Mexico
+Monaco
+Mongolia
+Montenegro
+Morocco
+Mozambique
+Myanmar
+Namibia
+Nauru
+Nepal
+Netherlands
+New Zealand
+Nicaragua
+Niger
+Nigeria
+Niue
+Norway
+Oman
+Pakistan
+Palau
+Panama
+Papua New Guinea
+Paraguay
+Peru
+Philippines
+Poland
+Portugal
+Qatar
+Republic of Korea
+Republic of Moldova
+Romania
+Russian Federation - Central Federal District (Belgorod Oblast, Bryansk Oblast, Vladimir Oblast, Voronezh Oblast, Ivanovo Oblast, Kaluga Oblast, Kostroma Oblast, Kursk Oblast, Lipetsk Oblast, Moscow, Moscow Oblast, Oryol Oblast, Ryazan Oblast, Smolensk Oblast, Tambov Oblast, Tver Oblast, Tula Oblast, Yaroslavl Oblast)
+Russian Federation - Southern Federal District (Republic of Adygea, Astrakhan Oblast, Volgograd Oblast, Republic of Kalmykia, Krasnodar Krai, Rostov Oblast)
+Russian Federation - Northwestern Federal District (Arkhangelsk, Vologda, Kaliningrad, Republic of Karelia, Komi Republic, Leningrad Oblast, Murmansk Oblast, Nenets Autonomous Okrug, Novgorod Oblast, Pskov Oblast and Saint Petersburg)
+Russian Federation - Far Eastern Federal District (Amur Oblast, Jewish Autonomous Oblast, Kamchatka Krai, Magadan Oblast, Primorsky Krai, Sakha Republic, Sakhalin Oblast, Khabarovsk Krai, Chukotka Autonomous Okrug)
+Russian Federation - Siberian Federal District (Altai Republic, Altai Krai, Buryat Republic, Zabaykalsky Krai, Irkutsk Oblast, Kemerovo Oblast, Krasnoyarsk Krai, Novosibirsk Oblast, Omsk Oblast, Tomsk Oblast, Tuva Republic, Republic of Khakassia)
+Russian Federation - Urals Federal District (Kurgan Oblast, Sverdlovsk Oblast, Tyumen Oblast, Khanty¨CMansi Autonomous Okrug, Chelyabinsk Oblast, Yamalo-Nenets Autonomous Okrug)
+Russian Federation - Volga Federal District (Republic of Bashkortostan, Kirov Oblast, Mari El Republic, Republic of Mordovia, Nizhny Novgorod Oblast, Orenburg Oblast, Penza Oblast, Perm Krai, Samara Oblast, Saratov Oblast, Republic of Tatarstan, Udmurt Republic, Ulyanovsk Oblast, Chuvash Republic)
+Russian Federation - North Caucasian Federal District (Republic of Dagestan, Republic of Ingushetia, Kabardino-Balkar Republic, Karachay¨CCherkess Republic, Republic of North Ossetia¨CAlania, Stavropol Krai, Chechen Republic)
+Rwanda
+Saint Kitts and Nevis
+Saint Lucia
+Saint Vincent and the Grenadines
+Samoa
+San Marino
+Sao Tome and Principe
+Saudi Arabia
+Senegal
+Serbia
+Seychelles
+Sierra Leone
+Singapore
+Slovakia
+Slovenia
+Solomon Islands
+Somalia
+South Africa
+South Sudan
+Spain
+Sri Lanka
+Sudan
+Suriname
+Swaziland
+Sweden
+Switzerland
+Syrian Arab Republic
+Tajikistan
+Thailand
+The former Yugoslav Republic of Macedonia
+Togo
+Tonga
+Trinidad and Tobago
+Tunisia
+Turkey
+Turkmenistan
+Tuvalu
+Uganda
+Ukraine
+United Arab Emirates
+United Kingdom
+United Republic of Tanzania
+United States of America - New England (Maine, New Hampshire, Vermont, Massachusetts, Rhode Island, and Connecticut)
+United States of America - Middle Atlantic (Delaware, Maryland, New Jersey, Pennsylvania, Washington D.C., New York, Virginia, and West Virginia)
+United States of America - East North Central States (Illinois, Indiana, Michigan, Ohio, and Wisconsin)
+United States of America - West North Central States(Iowa, Kansas, Minnesota, Missouri, Nebraska, North Dakota and South Dakota)
+United States of America - Pacific States(Alaska, California, Hawaii, Oregon, Washington)
+United States of America - Mountain States(Arizona, Colorado, Idaho, Montana, Nevada, New Mexico, Utah, and Wyoming)
+United States of America - West South Central States(Arkansas, Louisiana, Oklahoma, and Texas)
+United States of America - East South Central States(Alabama, Kentucky, Mississippi, and Tennessee)
+United States of America - South Atlantic States(Delaware, Florida, Georgia, Maryland, North Carolina, South Carolina, Virginia, West Virginia, and the District of Columbia)
+Uruguay
+Uzbekistan
+Vanuatu
+Viet Nam
+Yemen
+Zambia
+Zimbabwe

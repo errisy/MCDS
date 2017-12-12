@@ -1,0 +1,1478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{47A99B89-EB0B-4B7A-87A9-C13F56A74234}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>MCDS.My.MyApplication</StartupObject>
+    <RootNamespace>MCDS</RootNamespace>
+    <AssemblyName>MCDS</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <ApplicationIcon>Vexcutor 256.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>R:\Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\Publish\MCDS\</InstallUrl>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>MCDS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DefineConstants>ReaderMode=0,Remote=0,Design=1,TestMode=1, AccessTest=0, ServerConnect=0, Online=0, EnableAd = 0</DefineConstants>
+    <Optimize>false</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>MCDS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DebugSymbols>true</DebugSymbols>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>DullahanKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>87FFB034FDBAAD5704BE93E3C7AF591086534F53</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Vecute_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HTMLConvert">
+      <HintPath>..\..\StandardLibraries\HTMLConvert.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Effects, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ABIF\ABIFileReader.vb" />
+    <Compile Include="ABIF\BytesExtension.vb" />
+    <Compile Include="AccessTest\Dulla.vb" />
+    <Compile Include="Advertisement\AddButton.xaml.vb">
+      <DependentUpon>AddButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Advertisement\AutoCompletePopup.vb" />
+    <Compile Include="Advertisement\CheckTick.xaml.vb">
+      <DependentUpon>CheckTick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Advertisement\RemoveButton.xaml.vb">
+      <DependentUpon>RemoveButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Advertisement\WpfDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dynamic\DynamicItem.vb" />
+    <Compile Include="EntryClasses\CancelRunViewModel.vb" />
+    <Compile Include="EntryClasses\DigestionBufferInfo.vb" />
+    <Compile Include="EntryClasses\DNAInfoPartail1.vb" />
+    <Compile Include="EntryClasses\frmCancelRun.Designer.vb">
+      <DependentUpon>frmCancelRun.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EntryClasses\frmCancelRun.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntryClasses\GetChartItemEventArgs.vb" />
+    <Compile Include="EntryClasses\IncubationStep.vb" />
+    <Compile Include="EntryClasses\Primer.vb" />
+    <Compile Include="EntryClasses\PrimerPair.vb" />
+    <Compile Include="EntryClasses\RequireParentEventArgs.vb" />
+    <Compile Include="EntryClasses\WPFCancelRun.xaml.vb">
+      <DependentUpon>WPFCancelRun.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VersionControl\UpdateControl.xaml.vb">
+      <DependentUpon>UpdateControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VersionControl\UpdateWindow.Designer.vb">
+      <DependentUpon>UpdateWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VersionControl\UpdateWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VersionControl\VersionControl.vb" />
+    <Compile Include="EntryClasses\WorkSpace.vb" />
+    <Compile Include="frmMainWPFPartial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcitons\PrimerList.xaml.vb">
+      <DependentUpon>PrimerList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Funcitons\PrimerModel.vb" />
+    <Compile Include="Funcitons\PrimerPairList.xaml.vb">
+      <DependentUpon>PrimerPairList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Funcitons\PrimerPairModel.vb" />
+    <Compile Include="Funcitons\RestrictionEnzymeCut.vb" />
+    <Compile Include="GeneDrawer\Geometries.vb" />
+    <Compile Include="GeneDrawer\GeneFileViewModel.vb" />
+    <Compile Include="GeneDrawer\IntegerRegion.vb" />
+    <Compile Include="GeneDrawer\ObjectModels\EnzymeSequenceObjectModel.vb" />
+    <Compile Include="GeneDrawer\ObjectModels\FeatureSequenceObjectModel.vb" />
+    <Compile Include="GeneDrawer\ObjectModels\GeneSequenceObjectModel.vb" />
+    <Compile Include="GeneDrawer\ObjectModels\NucleotideObjectModel.vb" />
+    <Compile Include="GeneDrawer\ViewModels\ArcArrowGeometryViewModel.vb" />
+    <Compile Include="GeneDrawer\ViewModels\ArcEnzymeSiteViewModel.vb" />
+    <Compile Include="GeneDrawer\ViewModels\ArrowGeometryViewModel.vb" />
+    <Compile Include="GeneDrawer\ViewModels\BackboneGeometry.vb" />
+    <Compile Include="GeneDrawer\ViewModels\CircleBackboneGeometry.vb" />
+    <Compile Include="GeneDrawer\ViewModels\EnzymeLabelViewModel.vb" />
+    <Compile Include="GeneDrawer\ViewModels\EnzymeSequenceCutViewModel.vb" />
+    <Compile Include="GeneDrawer\ViewModels\EnzymeSequenceViewModel.vb" />
+    <Compile Include="GeneDrawer\ViewModels\EnzymeSiteViewModel.vb" />
+    <Compile Include="GeneDrawer\ViewModels\FeatureLabelViewModel.vb" />
+    <Compile Include="GeneDrawer\ViewModels\FeatureSequenceViewModel.vb" />
+    <Compile Include="GeneDrawer\ViewModels\GeneFeatureViewModel.vb" />
+    <Compile Include="GeneDrawer\ViewModels\GeneLabelViewModel.vb" />
+    <Compile Include="GeneDrawer\ViewModels\GeneSequenceViewModel.vb" />
+    <Compile Include="GeneDrawer\ViewModels\NucleotideViewModel.vb" />
+    <Compile Include="GeneDrawer\ObjectModels\WPFSequenceObjectRow.vb" />
+    <Compile Include="GeneDrawer\WPFSequenceControl.xaml.vb">
+      <DependentUpon>WPFSequenceControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GeneDrawer\WPFSequenceGeometryRow.vb" />
+    <Compile Include="GeneDrawer\WPFSequenceView.vb" />
+    <Compile Include="GeneDrawer\WPFSequenceViewer.xaml.vb">
+      <DependentUpon>WPFSequenceViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GeneDrawer\WPFToolTipView.xaml.vb">
+      <DependentUpon>WPFToolTipView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GeneDrawer\WPFToolTipViewBase.vb" />
+    <Compile Include="GeneDrawer\WPFVectorMap.vb" />
+    <Compile Include="GeneDrawer\WPFVectorMapControl.xaml.vb">
+      <DependentUpon>WPFVectorMapControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GeneDrawer\WPFVectorMapViewer.xaml.vb">
+      <DependentUpon>WPFVectorMapViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hydrophobicity\HydrophobicityTable.vb" />
+    <Compile Include="KEGG\KEGGGeneDownloader.vb" />
+    <Compile Include="NCBI\NCBIGeneDownloader.vb" />
+    <Compile Include="NCBI\NCBIUtil.vb" />
+    <Compile Include="OnlineDatabaseImport\frmOnline.Designer.vb">
+      <DependentUpon>frmOnline.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineDatabaseImport\frmOnline.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OnlineDatabaseImport\OnlineDatabaseImporter.xaml.vb">
+      <DependentUpon>OnlineDatabaseImporter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineDatabaseImport\OnlineDatabaseModel.vb" />
+    <Compile Include="PrimerRecords\PrimerRecordEntry.vb" />
+    <Compile Include="SCFSupport\SequencingDataViewer.vb" />
+    <Compile Include="SCFSupport\SequencingTemplateSelector.vb" />
+    <Compile Include="Summary\SummaryModel.vb" />
+    <Compile Include="Util\UntilityFunctions.vb" />
+    <Compile Include="ViewModelCommand\EventCommand.vb" />
+    <Compile Include="ViewModelCommand\ViewModelCommand.vb" />
+    <Compile Include="WebService\KEGGAminoTable.vb" />
+    <Compile Include="WebService\KEGGCodonPreferenceAnalyzer.vb" />
+    <Compile Include="WebService\KEGGPathway.vb" />
+    <Compile Include="WebService\KEGGTranslation.vb" />
+    <Compile Include="WebService\KEGGTranslationConverter.vb" />
+    <Compile Include="WebService\kEGGUtil.vb" />
+    <Compile Include="Management\wpfCodonManagement.xaml.vb">
+      <DependentUpon>wpfCodonManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntryClasses\DNAInfo.vb" />
+    <Compile Include="EntryClasses\Nuctions4.vb" />
+    <Compile Include="EntryClasses\RecombinationMethod.vb" />
+    <Compile Include="WebService\SectionDivider.vb" />
+    <Compile Include="WebService\KEGGTranslationTable.vb" />
+    <Compile Include="WebService\SerializationModule.vb" />
+    <Compile Include="WPFBasicControls\ApplyButton.xaml.vb">
+      <DependentUpon>ApplyButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SCFSupport\BitmapConverter.vb" />
+    <Compile Include="WPFBasicControls\CloseButton.xaml.vb">
+      <DependentUpon>CloseButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SCFSupport\ControlledShape.vb" />
+    <Compile Include="WPFBasicControls\DownButton.xaml.vb">
+      <DependentUpon>DownButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFBasicControls\EnumComboBox.vb" />
+    <Compile Include="SCFSupport\ImageViewer.xaml.vb">
+      <DependentUpon>ImageViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SCFSupport\Link.vb" />
+    <Compile Include="SCFSupport\MultipleImages.xaml.vb">
+      <DependentUpon>MultipleImages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SCFSupport\MultipleSequencingResults.xaml.vb">
+      <DependentUpon>MultipleSequencingResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SCFSupport\NewButton.xaml.vb">
+      <DependentUpon>NewButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFBasicControls\SaveFileButton.xaml.vb">
+      <DependentUpon>SaveFileButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SCFSupport\SCFFormat.vb" />
+    <Compile Include="SCFSupport\SequencingView.xaml.vb">
+      <DependentUpon>SequencingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SCFSupport\SequencingViewBase.vb" />
+    <Compile Include="SCFSupport\SequenceGroup.xaml.vb">
+      <DependentUpon>SequenceGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Advertisement\EdgeLabel.vb" />
+    <Compile Include="Advertisement\GeneticEngineeringProject.xaml.vb">
+      <DependentUpon>GeneticEngineeringProject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Advertisement\InteropHost.vb" />
+    <Compile Include="Advertisement\LinkLabel.vb" />
+    <Compile Include="Advertisement\RegexExtension.vb" />
+    <Compile Include="Advertisement\RegistrationSuccess.xaml.vb">
+      <DependentUpon>RegistrationSuccess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Advertisement\StructureHelper.vb" />
+    <Compile Include="Advertisement\SynthenomePrice.vb" />
+    <Compile Include="Advertisement\SynthenomeProjectEntry.xaml.vb">
+      <DependentUpon>SynthenomeProjectEntry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Advertisement\SynthenomeSynthesisEntry.xaml.vb">
+      <DependentUpon>SynthenomeSynthesisEntry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="DBListView.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Encryption\AkimeHomura.vb" />
+    <Compile Include="Encryption\PasswordCheck.vb" />
+    <Compile Include="Encryption\XSELM.vb" />
+    <Compile Include="ErrorWindow\frmError.Designer.vb">
+      <DependentUpon>frmError.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorWindow\frmError.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorWindow\VexcutorError.xaml.vb">
+      <DependentUpon>VexcutorError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FileAccociation\FileTypeAssociation.vb" />
+    <Compile Include="FreeStyleDesigners\ITabHostingControl.vb" />
+    <Compile Include="FreeStyleDesigners\PrimerEditorView.Designer.vb">
+      <DependentUpon>PrimerEditorView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FreeStyleDesigners\PrimerEditorView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FreeStyleDesigners\SequenceEditorView.Designer.vb">
+      <DependentUpon>SequenceEditorView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FreeStyleDesigners\SequenceEditorView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FreeStyle\AppearanceMenu.vb" />
+    <Compile Include="FreeStyle\BindingInterfaces.vb" />
+    <Compile Include="FreeStyle\BioFeatureBase.vb" />
+    <Compile Include="FreeStyle\Chapter.vb" />
+    <Compile Include="FreeStyle\ColorPicker.vb" />
+    <Compile Include="FreeStyle\ControlPoint.vb" />
+    <Compile Include="FreeStyle\CustomShape.vb" />
+    <Compile Include="FreeStyle\DetailGrid.vb" />
+    <Compile Include="FreeStyle\Director.vb" />
+    <Compile Include="FreeStyle\DNADesigner.xaml.vb">
+      <DependentUpon>DNADesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FreeStyle\EditBox.vb" />
+    <Compile Include="FreeStyle\Editor.vb" />
+    <Compile Include="FreeStyle\EffectEditors.vb" />
+    <Compile Include="FreeStyle\ElementFacilities.vb" />
+    <Compile Include="FreeStyle\ExtensiveModels.vb" />
+    <Compile Include="FreeStyle\FixSizeModel.vb" />
+    <Compile Include="FreeStyle\FontParameterMapper.vb" />
+    <Compile Include="FreeStyle\FreeStage.vb" />
+    <Compile Include="FreeStyle\LayoutTool.vb" />
+    <Compile Include="FreeStyle\PolyPointTool.vb" />
+    <Compile Include="FreeStyle\PrimerEditor.xaml.vb">
+      <DependentUpon>PrimerEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FreeStyle\PropertyGridX.vb" />
+    <Compile Include="FreeStyle\SaveButton.vb" />
+    <Compile Include="FreeStyle\ShapeTools.vb" />
+    <Compile Include="FreeStyle\StyleElement.vb" />
+    <Compile Include="FreeStyle\TextArrow.vb" />
+    <Compile Include="FreeStyle\VisibleElementSurrogation.vb" />
+    <Compile Include="frmAbout.Designer.vb">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcitons\BufferedListView.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Funcitons\BufferedPictureBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Funcitons\DotNetArt.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Funcitons\NativeDefine.vb" />
+    <Compile Include="Funcitons\RTFStringBuilder.vb" />
+    <Compile Include="Funcitons\SiteRecombination.vb" />
+    <Compile Include="Funcitons\WPFSequenceViewer.vb" />
+    <Compile Include="MainSub\MainModule.vb" />
+    <Compile Include="Management\GridTable.vb" />
+    <Compile Include="Management\RecombinationManagement.vb" />
+    <Compile Include="Management\RestrictionManagement.vb" />
+    <Compile Include="ErrorWindow\VexError.vb" />
+    <Compile Include="EntryClasses\FacilityFunctions.vb" />
+    <Compile Include="Funcitons\FMTBT.vb" />
+    <Compile Include="Funcitons\MethodRecorder.vb" />
+    <Compile Include="EntryClasses\Nuctions2.vb" />
+    <Compile Include="Funcitons\PrimerAnalysisFrame.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Funcitons\PseudoGeneFile.vb" />
+    <Compile Include="EntryClasses\Nuctions3.vb" />
+    <Compile Include="RemoteService\frmSaveToServer.Designer.vb">
+      <DependentUpon>frmSaveToServer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RemoteService\frmSaveToServer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RemoteService\LoginServer.Designer.vb">
+      <DependentUpon>LoginServer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RemoteService\LoginServer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RemoteService\BinarySerializer.vb" />
+    <Compile Include="RemoteService\Bunbury.vb" />
+    <Compile Include="RemoteService\ClientBrowswer.Designer.vb">
+      <DependentUpon>ClientBrowswer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RemoteService\ClientBrowswer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RemoteService\ClientSetting.vb" />
+    <Compile Include="RemoteService\Codec.vb" />
+    <Compile Include="RemoteService\DataBaseInterface.vb" />
+    <Compile Include="RemoteService\Descriptor.vb" />
+    <Compile Include="RemoteService\Facilities.vb" />
+    <Compile Include="RemoteService\FieldManager.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RemoteService\frmConnecting.Designer.vb">
+      <DependentUpon>frmConnecting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RemoteService\frmConnecting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RemoteService\GameEngine.vb" />
+    <Compile Include="RemoteService\ListManager.Designer.vb">
+      <DependentUpon>ListManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RemoteService\ListManager.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RemoteService\PrimerInfo.vb" />
+    <Compile Include="RemoteService\PrimerManageView.Designer.vb">
+      <DependentUpon>PrimerManageView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RemoteService\PrimerManageView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RemoteService\RemoteClass.vb" />
+    <Compile Include="RemoteService\RSACrypt.vb" />
+    <Compile Include="RemoteService\SecureMessage.vb" />
+    <Compile Include="RemoteService\ServiceManager.Designer.vb">
+      <DependentUpon>ServiceManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RemoteService\ServiceManager.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RemoteService\ThreadHeader.vb" />
+    <Compile Include="Summary\NewLogo.xaml.vb">
+      <DependentUpon>NewLogo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Summary\wpfSummary.xaml.vb">
+      <DependentUpon>wpfSummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\PCRViewModel.vb" />
+    <Compile Include="WorkChart\CodonTable.vb" />
+    <Compile Include="WorkChart\DropDownContainer.vb" />
+    <Compile Include="WorkChart\EnzymeManageView.Designer.vb">
+      <DependentUpon>EnzymeManageView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\EnzymeManageView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WorkChart\frmRemoveFeature.Designer.vb">
+      <DependentUpon>frmRemoveFeature.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\frmRemoveFeature.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkChart\HostManageView.Designer.vb">
+      <DependentUpon>HostManageView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\HostManageView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WorkChart\NickManageView.Designer.vb">
+      <DependentUpon>NickManageView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\NickManageView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WorkChart\PrintPage.vb" />
+    <Compile Include="Funcitons\SequenceRegion.vb" />
+    <Compile Include="Funcitons\SequenceViewer.Designer.vb">
+      <DependentUpon>SequenceViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Funcitons\SequenceViewer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Funcitons\VecLib.vb" />
+    <Compile Include="Funcitons\Vector.vb" />
+    <Compile Include="EntryClasses\XDes.vb" />
+    <Compile Include="ProgramWindows\JunctionSequenceDesigner.Designer.vb">
+      <DependentUpon>JunctionSequenceDesigner.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramWindows\JunctionSequenceDesigner.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramWindows\pasteurMerger.Designer.vb">
+      <DependentUpon>pasteurMerger.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramWindows\pasteurMerger.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramWindows\SequenceWindow.Designer.vb">
+      <DependentUpon>SequenceWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramWindows\SequenceWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabContainer.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WorkChart\BrowserPage.Designer.vb">
+      <DependentUpon>BrowserPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\BrowserPage.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EntryClasses\ChartItem.vb" />
+    <Compile Include="EntryClasses\Nuctions.vb" />
+    <Compile Include="ProgramWindows\EnzSpider.Designer.vb">
+      <DependentUpon>EnzSpider.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramWindows\EnzSpider.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramWindows\frmEnzReport.Designer.vb">
+      <DependentUpon>frmEnzReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramWindows\frmEnzReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkChart\ChoicePanel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WorkChart\CodonLibraryManager.Designer.vb">
+      <DependentUpon>CodonLibraryManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\CodonLibraryManager.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WorkChart\FeatureManageView.Designer.vb">
+      <DependentUpon>FeatureManageView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\FeatureManageView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WorkChart\FeatureScreenView.Designer.vb">
+      <DependentUpon>FeatureScreenView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\FeatureScreenView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WorkChart\frmAddFeature.Designer.vb">
+      <DependentUpon>frmAddFeature.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\frmAddFeature.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkChart\frmEnzymes.Designer.vb">
+      <DependentUpon>frmEnzymes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\frmEnzymes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkChart\frmErrorReport.Designer.vb">
+      <DependentUpon>frmErrorReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\frmErrorReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkChart\frmExpRecord.Designer.vb">
+      <DependentUpon>frmExpRecord.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\frmExpRecord.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkChart\frmFeatures.Designer.vb">
+      <DependentUpon>frmFeatures.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\frmFeatures.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramWindows\frmHelp.Designer.vb">
+      <DependentUpon>frmHelp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramWindows\frmHelp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkChart\frmItems.Designer.vb">
+      <DependentUpon>frmItems.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\frmItems.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramWindows\frmNucleotideEnzyme.Designer.vb">
+      <DependentUpon>frmNucleotideEnzyme.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramWindows\frmNucleotideEnzyme.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramWindows\frmPCR.Designer.vb">
+      <DependentUpon>frmPCR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramWindows\frmPCR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramWindows\ProgramKit\PCRv1_0.vb" />
+    <Compile Include="WorkChart\frmPrimerConflict.Designer.vb">
+      <DependentUpon>frmPrimerConflict.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\frmPrimerConflict.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkChart\frmProperty.Designer.vb">
+      <DependentUpon>frmProperty.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\frmProperty.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramWindows\frmVecDesign.Designer.vb">
+      <DependentUpon>frmVecDesign.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramWindows\frmVecDesign.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="WorkChart\GroupCopyEventArgs.vb" />
+    <Compile Include="WorkChart\GroupViewer.Designer.vb">
+      <DependentUpon>GroupViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\GroupViewer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WorkChart\MetafileMethod.vb" />
+    <Compile Include="WorkChart\MultipleItemView.Designer.vb">
+      <DependentUpon>MultipleItemView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\MultipleItemView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WorkChart\OprationView.Designer.vb">
+      <DependentUpon>OprationView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\OprationView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WorkChart\PrintPageView.Designer.vb">
+      <DependentUpon>PrintPageView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\PrintPageView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EntryClasses\PropertyControl.Designer.vb">
+      <DependentUpon>PropertyControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EntryClasses\PropertyControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WorkChart\PropertyView.Designer.vb">
+      <DependentUpon>PropertyView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\PropertyView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WorkChart\RatioButtonMap.vb" />
+    <Compile Include="WorkChart\RestrictionEnzymeView.Designer.vb">
+      <DependentUpon>RestrictionEnzymeView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\RestrictionEnzymeView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WorkChart\ScrollingNumberBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WorkChart\SubGroupViewer.Designer.vb">
+      <DependentUpon>SubGroupViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\SubGroupViewer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WorkChart\TmViewer.Designer.vb">
+      <DependentUpon>TmViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkChart\TmViewer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WorkChart\Vector.vb" />
+    <Compile Include="WorkControl.Designer.vb">
+      <DependentUpon>WorkControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WorkControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WorkControlSiblings\IWorkControlSibling.vb" />
+    <Compile Include="WPFBasicControls\UpButton.xaml.vb">
+      <DependentUpon>UpButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFModelVisualTechnology\ContainerVisual.vb" />
+    <Compile Include="WPFModelVisualTechnology\ISubstantialVisual.vb" />
+    <Compile Include="WPFModelVisualTechnology\ModelVisual.vb" />
+    <Compile Include="WPFModelVisualTechnology\ModelVisualCollection.vb" />
+    <Compile Include="WPFModelVisualTechnology\PanelVisual.vb" />
+    <Compile Include="WPFModelVisualTechnology\ShapeVisual.vb" />
+    <Compile Include="WPFModelVisualTechnology\TextVisual.vb" />
+    <Compile Include="WPFModelVisualTechnology\VisualPresenter.vb" />
+    <Compile Include="WPFPropertyPanels\CRISPRCutPanelViewModels.vb" />
+    <Compile Include="WPFPropertyPanels\frmPrimerList.Designer.vb">
+      <DependentUpon>frmPrimerList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WPFPropertyPanels\frmPrimerList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WPFPropertyPanels\GoldenGateDesignViewModels.vb" />
+    <Compile Include="WPFPropertyPanels\LigationViewModels.vb" />
+    <Compile Include="WPFPropertyPanels\RecombinationPanelViewModels.vb" />
+    <Compile Include="WPFPropertyPanels\WPFCRISPRCutPanel.xaml.vb">
+      <DependentUpon>WPFCRISPRCutPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFPropertyPanels\WPFFeatureSelectionPanel.xaml.vb">
+      <DependentUpon>WPFFeatureSelectionPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFPropertyPanels\WPFGibsonDesignPanel.xaml.vb">
+      <DependentUpon>WPFGibsonDesignPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFPropertyPanels\GibsonDesignPanelViewModels.vb" />
+    <Compile Include="WPFPropertyPanels\WPFLigationPanel.xaml.vb">
+      <DependentUpon>WPFLigationPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFPropertyPanels\WPFPrimerList.xaml.vb">
+      <DependentUpon>WPFPrimerList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFPropertyPanels\WPFRecombinationPanel.xaml.vb">
+      <DependentUpon>WPFRecombinationPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\EntryTypes\CutSiteModelVisual.vb" />
+    <Compile Include="WPFStyle\EntryTypes\CutSiteViewModel.vb" />
+    <Compile Include="WPFStyle\EntryTypes\CutViewModel.vb" />
+    <Compile Include="WPFStyle\EntryTypes\FeatureDefinition.vb" />
+    <Compile Include="WPFStyle\EntryTypes\ICutSite.vb" />
+    <Compile Include="WPFStyle\EntryTypes\KEGGOrganismCodonModel.vb" />
+    <Compile Include="WPFStyle\EntryTypes\OrganismTemplateSelector.vb" />
+    <Compile Include="WPFStyle\EntryTypes\RecombinationSetDefinition.vb" />
+    <Compile Include="WPFStyle\EntryTypes\RestrictionEnzymeDefinition.vb" />
+    <Compile Include="WPFStyle\EntryTypes\gRNADefinition.vb" />
+    <Compile Include="WPFStyle\EntryTypes\WPFCodonAnalyzer.xaml.vb">
+      <DependentUpon>WPFCodonAnalyzer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\EntryTypes\WPFDigestionBufferColumnHeader.xaml.vb">
+      <DependentUpon>WPFDigestionBufferColumnHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\EntryTypes\WPFDigestionBufferItem.xaml.vb">
+      <DependentUpon>WPFDigestionBufferItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\EntryTypes\WPFDigestionBufferManager.xaml.vb">
+      <DependentUpon>WPFDigestionBufferManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\EntryTypes\WPFDigestionBufferRowLeader.xaml.vb">
+      <DependentUpon>WPFDigestionBufferRowLeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\EntryTypes\WPFFeatureManager.xaml.vb">
+      <DependentUpon>WPFFeatureManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\EntryTypes\WPFFeatureSetting.xaml.vb">
+      <DependentUpon>WPFFeatureSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\EntryTypes\WPFgRNAManager.xaml.vb">
+      <DependentUpon>WPFgRNAManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\EntryTypes\WPFRecombinationSetManager.xaml.vb">
+      <DependentUpon>WPFRecombinationSetManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\EntryTypes\WFPRestrictionEnzymeManager.xaml.vb">
+      <DependentUpon>WFPRestrictionEnzymeManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\EntryTypes\WPFStandardFeatureManager.xaml.vb">
+      <DependentUpon>WPFStandardFeatureManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\EntryTypes\WPFStandardFeaturesModel.vb" />
+    <Compile Include="WPFStyle\frmORF.Designer.vb">
+      <DependentUpon>frmORF.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\frmORF.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WPFStyle\ItemsSourceProvider.vb" />
+    <Compile Include="WPFStyle\MainUI.xaml.vb">
+      <DependentUpon>MainUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\OperationViewContainer.vb" />
+    <Compile Include="WPFStyle\ORFSearchDialog.xaml.vb">
+      <DependentUpon>ORFSearchDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\ORFSearchOptions.vb" />
+    <Compile Include="WPFStyle\RecentFiles.vb" />
+    <Compile Include="WPFStyle\StandardFeatures.vb" />
+    <Compile Include="WPFStyle\WPFDialogExtension.vb" />
+    <Compile Include="WPFStyle\SettingEntry.vb" />
+    <Compile Include="WPFStyle\WPFEntryIOPartial.vb" />
+    <Compile Include="WPFStyle\WPFErrorWindow.xaml.vb">
+      <DependentUpon>WPFErrorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\WPFPropertyControlPanels\WPFEnzymeInputBox.xaml.vb">
+      <DependentUpon>WPFEnzymeInputBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\WPFPropertyControlPanels\WPFPropertyGeneralPanel.xaml.vb">
+      <DependentUpon>WPFPropertyGeneralPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\WPFWorkControl.xaml.vb">
+      <DependentUpon>WPFWorkControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\WPFWorkSpaceViewModel.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EntryClasses\frmCancelRun.resx">
+      <DependentUpon>frmCancelRun.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorWindow\frmError.resx">
+      <DependentUpon>frmError.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FreeStyleDesigners\PrimerEditorView.resx">
+      <DependentUpon>PrimerEditorView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FreeStyleDesigners\SequenceEditorView.resx">
+      <DependentUpon>SequenceEditorView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcitons\SequenceViewer.resx">
+      <DependentUpon>SequenceViewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnlineDatabaseImport\frmOnline.resx">
+      <DependentUpon>frmOnline.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoteService\frmSaveToServer.resx">
+      <DependentUpon>frmSaveToServer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoteService\LoginServer.resx">
+      <DependentUpon>LoginServer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgramWindows\EnzSpider.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EnzSpider.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgramWindows\frmEnzReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEnzReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgramWindows\frmHelp.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmHelp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgramWindows\frmNucleotideEnzyme.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmNucleotideEnzyme.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgramWindows\frmPCR.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPCR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgramWindows\JunctionSequenceDesigner.resx">
+      <DependentUpon>JunctionSequenceDesigner.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgramWindows\pasteurMerger.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>pasteurMerger.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgramWindows\SequenceWindow.resx">
+      <DependentUpon>SequenceWindow.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoteService\ClientBrowswer.resx">
+      <DependentUpon>ClientBrowswer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoteService\frmConnecting.resx">
+      <DependentUpon>frmConnecting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoteService\ListManager.resx">
+      <DependentUpon>ListManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoteService\PrimerManageView.resx">
+      <DependentUpon>PrimerManageView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoteService\ServiceManager.resx">
+      <DependentUpon>ServiceManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VersionControl\UpdateWindow.resx">
+      <DependentUpon>UpdateWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\BrowserPage.resx">
+      <DependentUpon>BrowserPage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\CodonLibraryManager.resx">
+      <DependentUpon>CodonLibraryManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\EnzymeManageView.resx">
+      <DependentUpon>EnzymeManageView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\FeatureManageView.resx">
+      <DependentUpon>FeatureManageView.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\FeatureScreenView.resx">
+      <DependentUpon>FeatureScreenView.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\frmAddFeature.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAddFeature.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\frmEnzymes.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEnzymes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\frmErrorReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmErrorReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\frmExpRecord.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmExpRecord.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\frmFeatures.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFeatures.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\frmItems.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmItems.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\frmPrimerConflict.resx">
+      <DependentUpon>frmPrimerConflict.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\frmProperty.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmProperty.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgramWindows\frmVecDesign.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmVecDesign.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\frmRemoveFeature.resx">
+      <DependentUpon>frmRemoveFeature.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\GroupViewer.resx">
+      <DependentUpon>GroupViewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\HostManageView.resx">
+      <DependentUpon>HostManageView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\MultipleItemView.resx">
+      <DependentUpon>MultipleItemView.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\NickManageView.resx">
+      <DependentUpon>NickManageView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\OprationView.resx">
+      <DependentUpon>OprationView.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\PrintPageView.resx">
+      <DependentUpon>PrintPageView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntryClasses\PropertyControl.resx">
+      <DependentUpon>PropertyControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\PropertyView.resx">
+      <DependentUpon>PropertyView.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\RestrictionEnzymeView.resx">
+      <DependentUpon>RestrictionEnzymeView.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\SubGroupViewer.resx">
+      <DependentUpon>SubGroupViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkChart\TmViewer.resx">
+      <DependentUpon>TmViewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkControl.resx">
+      <DependentUpon>WorkControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WPFPropertyPanels\frmPrimerList.resx">
+      <DependentUpon>frmPrimerList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WPFStyle\frmORF.resx">
+      <DependentUpon>frmORF.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="DullahanKey.pfx" />
+    <None Include="Helpfiles\PCR Product Calculating Kit.mht" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Vecute_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ligate32.png" />
+    <Resource Include="Images\New32.png" />
+    <Resource Include="Images\PCR32.png" />
+    <Resource Include="Images\Complement32.png" />
+    <Resource Include="Images\Forward32.png" />
+    <Resource Include="Images\Hash32.png" />
+    <Resource Include="Images\Merge32.png" />
+    <Resource Include="Images\Reverse32.png" />
+    <Resource Include="Images\ReverseComplement32.png" />
+    <Resource Include="Images\Translate32.png" />
+    <Resource Include="Images\Analysis32.png" />
+    <Resource Include="Images\Compare32.png" />
+    <Resource Include="Images\Modify32.png" />
+    <Resource Include="Images\Sequencing32.png" />
+    <Resource Include="Images\NewPage32.png" />
+    <Resource Include="Images\Printer32.png" />
+    <Resource Include="Images\RemovePage32.png" />
+    <Resource Include="Images\Copy.png" />
+    <Resource Include="Images\Copy32.png" />
+    <Resource Include="Images\Duplicate.png" />
+    <Resource Include="Images\Duplicate32.png" />
+    <Resource Include="Images\Remove32.png" />
+    <Resource Include="Images\Save32.png" />
+    <Resource Include="Images\SaveAs32.png" />
+    <Resource Include="Images\Open.png" />
+    <Resource Include="Images\Open32.png" />
+    <Resource Include="Images\Paste32.png" />
+    <Resource Include="Images\Extract32.png" />
+    <Resource Include="Images\Host32.png" />
+    <Resource Include="Images\Incubate32.png" />
+    <Resource Include="Images\Transform32.png" />
+    <Resource Include="Images\Info.png" />
+    <Resource Include="Images\Info32.png" />
+    <Resource Include="Images\Help.png" />
+    <Resource Include="Images\Help32.png" />
+    <Resource Include="Images\KEGG.png" />
+    <Resource Include="Images\NCBI.png" />
+    <None Include="Images\CRISPR32.png" />
+    <None Include="Images\Gibson32.png" />
+    <None Include="Images\online32.png" />
+    <Content Include="WPFStyle\PCR32.png" />
+    <None Include="Resources\Recombine.png" />
+    <None Include="Resources\Compare1.png" />
+    <None Include="Resources\Design.png" />
+    <None Include="Resources\Sequencing.png" />
+    <None Include="Resources\Search.png" />
+    <None Include="Resources\Update.png" />
+    <None Include="Resources\CutData.png" />
+    <None Include="Resources\Copy.png" />
+    <None Include="Resources\Paste.png" />
+    <None Include="Resources\DeleteData.png" />
+    <None Include="Resources\Feature.png" />
+    <None Include="Resources\FeatureAdd.png" />
+    <None Include="Resources\FeatureDelete.png" />
+    <None Include="Resources\Translate.png" />
+    <None Include="Resources\Forward.png" />
+    <None Include="Resources\ReverseComplement.png" />
+    <None Include="Resources\Reverse.png" />
+    <None Include="Resources\Complement.png" />
+    <None Include="Resources\Lib.png" />
+    <None Include="Resources\LibAdd.png" />
+    <None Include="Resources\Barcode.png" />
+    <None Include="Resources\Merge1.png" />
+    <None Include="Resources\Analysis.png" />
+    <None Include="Resources\Screen.png" />
+    <None Include="Resources\Gel1.png" />
+    <None Include="Resources\Modify1.png" />
+    <None Include="Resources\PCR.png" />
+    <None Include="Resources\Cut.png" />
+    <None Include="Resources\DNA.png" />
+    <None Include="Resources\Ligation1.png" />
+    <None Include="Resources\Add.png" />
+    <None Include="Resources\Open.png" />
+    <None Include="Resources\Open1.png" />
+    <None Include="Resources\Add2.png" />
+    <None Include="Resources\Save.png" />
+    <None Include="Resources\Save2.png" />
+    <None Include="Resources\Delete.png" />
+    <None Include="Resources\Everyone.png" />
+    <None Include="Resources\Share.png" />
+    <None Include="Resources\GradYW.png" />
+    <None Include="Resources\Incubation.png" />
+    <None Include="Resources\Transformation.png" />
+    <None Include="Resources\Host.png" />
+    <None Include="Resources\Extraction.png" />
+    <None Include="Resources\Expression.png" />
+    <None Include="Resources\Synthenome.png" />
+    <None Include="Resources\Synthenome5.png" />
+    <Resource Include="Images\Synthenome5.png" />
+    <None Include="Resources\Synthenome2.png" />
+    <Resource Include="Images\Paste.png" />
+    <Resource Include="Images\SaveAs.png" />
+    <Resource Include="Images\New.png" />
+    <Resource Include="Images\Save.png" />
+    <Resource Include="Images\DNA.png" />
+    <Resource Include="Images\DNA48.png" />
+    <Resource Include="Images\DNA32.png" />
+    <Resource Include="Images\Digest.png" />
+    <Resource Include="Images\Digest32.png" />
+    <Resource Include="Images\Gel32.png" />
+    <Resource Include="Images\Screen32.png" />
+    <Content Include="Vexcutor 256.ico" />
+    <None Include="Resources\gradyellowred.png" />
+    <None Include="Resources\grad2.png" />
+    <None Include="Resources\Modify.png" />
+    <None Include="Resources\Gel.png" />
+    <None Include="Resources\Ligation.png" />
+    <None Include="Resources\Screen2.png" />
+    <None Include="Resources\rec.png" />
+    <None Include="Resources\REAna.png" />
+    <None Include="Resources\SEQ.png" />
+    <None Include="Resources\SAN.png" />
+    <Content Include="favicon.ico" />
+    <None Include="Resources\HashPicker.png" />
+    <None Include="Resources\hashpick2.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\new-page.png" />
+    <None Include="Resources\Merge.png" />
+    <None Include="Resources\Compare.png" />
+    <None Include="Resources\Vexcutor.png" />
+    <Content Include="V.ico" />
+    <Content Include="Vct.ico" />
+    <Content Include="Vct64.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ChartSearch\" />
+    <Folder Include="HTTPService\" />
+    <Folder Include="Preloader\" />
+    <Folder Include="ProjectControls\" />
+    <Folder Include="RemotePortX\" />
+    <Folder Include="Settings\" />
+    <Folder Include="WPFStyle\WPFWrapperClasses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Advertisement\AddButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Advertisement\CheckTick.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Advertisement\RemoveButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EntryClasses\WPFCancelRun.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Funcitons\PrimerList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Funcitons\PrimerPairList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GeneDrawer\WPFSequenceControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GeneDrawer\WPFSequenceViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GeneDrawer\WPFToolTipView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GeneDrawer\WPFVectorMapControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GeneDrawer\WPFVectorMapViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\wpfCodonManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OnlineDatabaseImport\OnlineDatabaseImporter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VersionControl\UpdateControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFBasicControls\ApplyButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFBasicControls\CloseButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SCFSupport\ImageViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SCFSupport\MultipleImages.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SCFSupport\MultipleSequencingResults.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SCFSupport\NewButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFBasicControls\DownButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFBasicControls\SaveFileButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SCFSupport\SequencingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SCFSupport\SequenceGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Advertisement\GeneticEngineeringProject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Advertisement\RegistrationSuccess.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Advertisement\SynthenomeProjectEntry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Advertisement\SynthenomeSynthesisEntry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ErrorWindow\VexcutorError.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FreeStyle\DNADesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FreeStyle\PrimerEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Summary\NewLogo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Summary\wpfSummary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFBasicControls\UpButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFPropertyPanels\WPFCRISPRCutPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFPropertyPanels\WPFFeatureSelectionPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFPropertyPanels\WPFGibsonDesignPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFPropertyPanels\WPFLigationPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFPropertyPanels\WPFPrimerList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFPropertyPanels\WPFRecombinationPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFStyle\EntryTypes\WPFCodonAnalyzer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFStyle\EntryTypes\WPFDigestionBufferColumnHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFStyle\EntryTypes\WPFDigestionBufferItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFStyle\EntryTypes\WPFDigestionBufferManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFStyle\EntryTypes\WPFDigestionBufferRowLeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFStyle\EntryTypes\WPFFeatureManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFStyle\EntryTypes\WPFFeatureSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFStyle\EntryTypes\WPFgRNAManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFStyle\EntryTypes\WPFRecombinationSetManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFStyle\EntryTypes\WFPRestrictionEnzymeManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFStyle\EntryTypes\WPFStandardFeatureManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFStyle\MainUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFStyle\ORFSearchDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFStyle\WPFErrorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFStyle\WPFPropertyControlPanels\WPFEnzymeInputBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFStyle\WPFPropertyControlPanels\WPFPropertyGeneralPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFStyle\WPFWorkControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Errisy\Errisy.vbproj">
+      <Project>{af8b57a7-d2da-4917-a169-89701351612f}</Project>
+      <Name>Errisy</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

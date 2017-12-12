@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="SynthenomeProjectEntry"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:my="clr-namespace:MCDS"
+             mc:Ignorable="d" 
+             d:DesignHeight="140" d:DesignWidth="200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <my:EdgeLabel HorizontalAlignment="Center" VerticalAlignment="Top" Stroke="Black" FontWeight="Bold" FontSize="20">
+            <my:EdgeLabel.Fill>
+                <LinearGradientBrush>
+                    <GradientStop Color="YellowGreen" Offset="0"/>
+                    <GradientStop Color="GreenYellow" Offset="0.124"/>
+                    <GradientStop Color="Cyan" Offset="0.618"/>
+                    <GradientStop Color="BlueViolet" Offset="1"/>
+                </LinearGradientBrush>
+            </my:EdgeLabel.Fill>
+            <my:EdgeLabel.Effect>
+                <DropShadowEffect Opacity="0.4" Color="Blue"/>
+            </my:EdgeLabel.Effect> Synthenome Project
+        </my:EdgeLabel>
+        <TextBlock Grid.Row="1" TextWrapping="Wrap" Padding="4" >
+            From US$<Run Text="{Binding Path=ConstructionPrice}" />/construction.<LineBreak/>
+            <Run FontStyle="Italic">E. coli</Run> gene knockout, multiple fragment constuction, multple gene integration.
+        </TextBlock>
+        <Button Grid.Row="2" Background="White" FontFamily="Calibri" FontSize="18" Foreground="RoyalBlue">Get Quotation Now!</Button>
+    </Grid>
+</UserControl>

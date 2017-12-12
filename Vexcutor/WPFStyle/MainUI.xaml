@@ -1,0 +1,164 @@
+﻿<Window x:Class="MainUI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:e="clr-namespace:Errisy;assembly=Errisy"
+             mc:Ignorable="d" 
+             Title="Vexcutor 2016"
+             d:DesignHeight="800" d:DesignWidth="1200" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Ribbon Background="#AAC8FFBB" Foreground="Black">
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu Background="Purple">
+                    <RibbonApplicationMenuItem Header="New" Click="NewProject" ImageSource="pack://application:,,,/Images/New32.png"/>
+                    <RibbonApplicationMenuItem Header="Opoen" Click="OpenFile" ImageSource="pack://application:,,,/Images/Open32.png"/>
+                    <RibbonApplicationMenuItem Header="Save" ImageSource="pack://application:,,,/Images/Save32.png"/>
+                    <RibbonApplicationMenuItem Header="Save As" ImageSource="pack://application:,,,/Images/SaveAs32.png"/>
+                    <RibbonApplicationMenuItem Header="Close" ImageSource="pack://application:,,,/Images/Remove32.png"/>
+                    <RibbonSeparator />
+                    <RibbonApplicationMenuItem Name="RecentFilesMenuItem" Header="Recent Projects"/>
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+            <RibbonTab Header="General">
+                <RibbonGroup Header="File">
+                    <RibbonGroup.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Header, RelativeSource={RelativeSource AncestorType=RibbonGroup}}" Foreground="#FFFF5522"/>
+                        </DataTemplate>
+                    </RibbonGroup.HeaderTemplate>
+                    <RibbonButton Label="New" Click="NewProject" SmallImageSource="pack://application:,,,/Images/New32.png"/>
+                    <RibbonButton Label="Open" Click="OpenFile" SmallImageSource="pack://application:,,,/Images/Open32.png"/>
+                    <RibbonButton Label="Save" Click="SaveFile" SmallImageSource="pack://application:,,,/Images/Save32.png"/>
+                    <RibbonButton Label="Save As" Click="SaveFileAs" SmallImageSource="pack://application:,,,/Images/SaveAs32.png"/>
+                    <RibbonButton Label="Close" Click="CloseFile" SmallImageSource="pack://application:,,,/Images/Remove32.png"/>
+                    <RibbonButton Label="Vector" Click="OpenVector" SmallImageSource="pack://application:,,,/Images/DNA32.png"/>
+                    <RibbonButton Label="Vector" Click="OpenSequence" SmallImageSource="pack://application:,,,/Images/DNA32.png"/>
+                </RibbonGroup>
+                <RibbonGroup Header="Print">
+                    <RibbonGroup.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Header, RelativeSource={RelativeSource AncestorType=RibbonGroup}}" Foreground="#FFFF5522"/>
+                        </DataTemplate>
+                    </RibbonGroup.HeaderTemplate>
+                    <RibbonToggleButton Label="Print Mode" SmallImageSource="pack://application:,,,/Images/Printer32.png"/>
+                    <RibbonButton Label="Add Page" SmallImageSource="pack://application:,,,/Images/NewPage32.png"/>
+                    <RibbonButton Label="Remove Page" SmallImageSource="pack://application:,,,/Images/RemovePage32.png"/>
+                </RibbonGroup>
+                <RibbonGroup Header="Clip Board">
+                    <RibbonGroup.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Header, RelativeSource={RelativeSource AncestorType=RibbonGroup}}" Foreground="#FFFF5522"/>
+                        </DataTemplate>
+                    </RibbonGroup.HeaderTemplate>
+                    <RibbonButton Label="Copy" SmallImageSource="pack://application:,,,/Images/Duplicate32.png"/>
+                    <RibbonButton Label="Paste" SmallImageSource="pack://application:,,,/Images/Paste32.png"/>
+                </RibbonGroup>
+                <RibbonGroup Header="Operations">
+                    <RibbonGroup.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Header, RelativeSource={RelativeSource AncestorType=RibbonGroup}}" Foreground="#FFFF5522"/>
+                        </DataTemplate>
+                    </RibbonGroup.HeaderTemplate>
+                    <RibbonButton Label="Load" SmallImageSource="pack://application:,,,/Images/DNA32.png" Click="btn_LoadDNA"/>
+                    <RibbonButton Label="Digest" SmallImageSource="pack://application:,,,/Images/Digest32.png"/>
+                    <RibbonButton Label="Separate" SmallImageSource="pack://application:,,,/Images/Gel32.png"/>
+                    <RibbonButton Label="Ligate" SmallImageSource="pack://application:,,,/Images/Ligate32.png"/>
+                    <RibbonButton Label="Screen" SmallImageSource="pack://application:,,,/Images/Screen32.png"/>
+                    <RibbonButton Label="PCR" SmallImageSource="pack://application:,,,/Images/PCR32.png"/>
+                    <RibbonButton Label="Hash" SmallImageSource="pack://application:,,,/Images/Hash32.png"/>
+                    <RibbonButton Label="Merge" SmallImageSource="pack://application:,,,/Images/Merge32.png"/>
+                    <RibbonButton Label="Analyze" SmallImageSource="pack://application:,,,/Images/Analysis32.png"/>
+                    <RibbonButton Label="Compare" SmallImageSource="pack://application:,,,/Images/Compare32.png"/>
+                    <RibbonButton Label="Modify" SmallImageSource="pack://application:,,,/Images/Modify32.png"/>
+                    <RibbonButton Label="Sequence" SmallImageSource="pack://application:,,,/Images/Sequencing32.png"/>
+                    <RibbonButton Label="Host" SmallImageSource="pack://application:,,,/Images/Host32.png"/>
+                    <RibbonButton Label="Transform" SmallImageSource="pack://application:,,,/Images/Transform32.png"/>
+                    <RibbonButton Label="Incubate" SmallImageSource="pack://application:,,,/Images/Incubate32.png"/>
+                    <RibbonButton Label="Extract" SmallImageSource="pack://application:,,,/Images/Extract32.png"/>
+                </RibbonGroup>
+                <RibbonGroup Header="Tool Functions">
+                    <RibbonGroup.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Header, RelativeSource={RelativeSource AncestorType=RibbonGroup}}" Foreground="#FFFF5522"/>
+                        </DataTemplate>
+                    </RibbonGroup.HeaderTemplate>
+                    <RibbonButton Label="Translate" SmallImageSource="pack://application:,,,/Images/Translate32.png"/>
+                    <RibbonButton Label="Forward" SmallImageSource="pack://application:,,,/Images/Forward32.png"/>
+                    <RibbonButton Label="Reverse Complement" SmallImageSource="pack://application:,,,/Images/ReverseComplement32.png"/>
+                    <RibbonButton Label="Reverse" SmallImageSource="pack://application:,,,/Images/Reverse32.png"/>
+                    <RibbonButton Label="Complement" SmallImageSource="pack://application:,,,/Images/Complement32.png"/>
+                </RibbonGroup>
+                <RibbonGroup Header="Features">
+                    <RibbonGroup.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Header, RelativeSource={RelativeSource AncestorType=RibbonGroup}}" Foreground="#FFFF5522"/>
+                        </DataTemplate>
+                    </RibbonGroup.HeaderTemplate>
+                    <RibbonButton Label="Translate" SmallImageSource="pack://application:,,,/Images/Translate32.png"/>
+                    <RibbonButton Label="Forward" SmallImageSource="pack://application:,,,/Images/Forward32.png"/>
+                    <RibbonButton Label="Reverse Complement" SmallImageSource="pack://application:,,,/Images/ReverseComplement32.png"/>
+                    <RibbonButton Label="Reverse" SmallImageSource="pack://application:,,,/Images/Reverse32.png"/>
+                    <RibbonButton Label="Complement" SmallImageSource="pack://application:,,,/Images/Complement32.png"/>
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="View">
+
+            </RibbonTab>
+            <RibbonTab Header="Operaion">
+                <RibbonGroup Header="Operations">
+                    <RibbonGroup.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Header, RelativeSource={RelativeSource AncestorType=RibbonGroup}}" Foreground="#FFFF5522"/>
+                        </DataTemplate>
+                    </RibbonGroup.HeaderTemplate>
+                    <RibbonButton Label="Load" LargeImageSource="pack://application:,,,/Images/DNA32.png"/>
+                    <RibbonButton Label="Digest" LargeImageSource="pack://application:,,,/Images/Digest32.png"/>
+                    <RibbonButton Label="Separate" LargeImageSource="pack://application:,,,/Images/Gel32.png"/>
+                    <RibbonButton Label="Ligate" LargeImageSource="pack://application:,,,/Images/Ligate32.png"/>
+                    <RibbonButton Label="Screen" LargeImageSource="pack://application:,,,/Images/Screen32.png"/>
+                    <RibbonButton Label="PCR" LargeImageSource="pack://application:,,,/Images/PCR32.png"/>
+                    <RibbonButton Label="Hash" LargeImageSource="pack://application:,,,/Images/Hash32.png"/>
+                    <RibbonButton Label="Merge" LargeImageSource="pack://application:,,,/Images/Merge32.png"/>
+                    <RibbonButton Label="Analyze" LargeImageSource="pack://application:,,,/Images/Analysis32.png"/>
+                    <RibbonButton Label="Compare" LargeImageSource="pack://application:,,,/Images/Compare32.png"/>
+                    <RibbonButton Label="Modify" LargeImageSource="pack://application:,,,/Images/Modify32.png"/>
+                    <RibbonButton Label="Sequence" LargeImageSource="pack://application:,,,/Images/Sequencing32.png"/>
+                    <RibbonButton Label="Host" LargeImageSource="pack://application:,,,/Images/Host32.png"/>
+                    <RibbonButton Label="Transform" LargeImageSource="pack://application:,,,/Images/Transform32.png"/>
+                    <RibbonButton Label="Incubate" LargeImageSource="pack://application:,,,/Images/Incubate32.png"/>
+                    <RibbonButton Label="Extract" LargeImageSource="pack://application:,,,/Images/Extract32.png"/>
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="Setting">
+                <RibbonGroup Header="Operations">
+                    <RibbonGroup.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Header, RelativeSource={RelativeSource AncestorType=RibbonGroup}}" Foreground="#FFFF5522"/>
+                        </DataTemplate>
+                    </RibbonGroup.HeaderTemplate>
+                    <RibbonButton Label="Recombination Sets" Click="ManageRecombinationSets" LargeImageSource="pack://application:,,,/Images/Compare32.png"/>
+                    <RibbonButton Label="Restriction Enzymes" Click="ManageRestrictionEnzymes" LargeImageSource="pack://application:,,,/Images/Digest32.png"/>
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="Help">
+                <RibbonGroup Header="Operations">
+                    <RibbonGroup.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Header, RelativeSource={RelativeSource AncestorType=RibbonGroup}}" Foreground="#FFFF5522"/>
+                        </DataTemplate>
+                    </RibbonGroup.HeaderTemplate>
+                    <RibbonButton Label="Help" LargeImageSource="pack://application:,,,/Images/Help32.png"/>
+                    <RibbonButton Label="About" LargeImageSource="pack://application:,,,/Images/Info32.png"/>
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+        <e:ClosableTabControl Grid.Row="1" Background="#AAC8FFBB" Name="tcHost" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            
+        </e:ClosableTabControl>
+    </Grid>
+</Window>

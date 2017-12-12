@@ -1,0 +1,176 @@
+﻿<UserControl x:Class="UpdateInformation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:my="clr-namespace:MCDS"
+             FontFamily="Arial"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="24" />
+            <RowDefinition Height="24" />
+            <RowDefinition Height="24" />
+            <RowDefinition Height="24" />
+            <RowDefinition Height="24" />
+            <RowDefinition Height="24" />
+            <RowDefinition Height="24" />
+            <RowDefinition Height="72" />
+            <RowDefinition Height="72" />
+            <RowDefinition Height="281*" />
+        </Grid.RowDefinitions>
+        <my:EdgeLabel Stroke="Red" StrokeThickness="1" FontSize="40" Fill="Gold" HorizontalAlignment="Center">Update User Information</my:EdgeLabel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="516*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">* Your Region</Label>
+            <TextBox Grid.Column="1" x:Name="tbRegion" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center"
+                     Text="{Binding Path=Region, UpdateSourceTrigger=PropertyChanged}"/>
+            <!--<ComboBox Grid.Column="1" x:Name="cbRegion" Background="White" SelectedIndex="{Binding Path=Region, UpdateSourceTrigger=PropertyChanged}"/>-->
+            <my:AutoCompletePopup x:Name="acpRegion" ConnectedTextBox="{Binding ElementName=tbRegion}" MaxHeight="800" MaxWidth="800"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="88" />
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="88" />
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="88" />
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="88" />
+                <ColumnDefinition Width="516*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">User Name</Label>
+            <Label Grid.Column="1" Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Content="{Binding ID}"/>
+            <Label Grid.Column="2" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">Old Password</Label>
+            <PasswordBox x:Name="pbPasswordOld" Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" />
+            <Label Grid.Column="4" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">New Password</Label>
+            <PasswordBox x:Name="pbPasswordNew1" Grid.Column="5" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Height="24" />
+            <Label Grid.Column="6" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">Confirm Password</Label>
+            <PasswordBox x:Name="pbPasswordNew2" Grid.Column="7" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Height="24" />
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="88" />
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="120*" />
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="120*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">Name</Label>
+            <TextBox x:Name="tbName" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="2" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">Title</Label>
+            <TextBox x:Name="tbTitle" Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Text="{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="4" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">Email Address</Label>
+            <TextBox Grid.Column="5" x:Name="tbEmail" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Text="{Binding EmailAddress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="6" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">Telephone</Label>
+            <TextBox x:Name="tbPhone" Grid.Column="7" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Text="{Binding PhoneNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="88" />
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="516*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">Room</Label>
+            <TextBox x:Name="tbRoom" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Text="{Binding Room, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="2" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">Building</Label>
+            <TextBox x:Name="tbBuilding" Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Text="{Binding Building, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="88*" />
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="88*" />
+                <ColumnDefinition Width="AUTO" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">Institution</Label>
+            <TextBox x:Name="tbInstitution" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Text="{Binding Institution, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="2" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">Company</Label>
+            <TextBox x:Name="tbCompany" Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Text="{Binding Company, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="80*" />
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="80*" />
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="80*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">Street Number</Label>
+            <TextBox x:Name="tbStreetNumber" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Text="{Binding StreetNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="2" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">Street</Label>
+            <TextBox x:Name="tbStreet" Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Text="{Binding Street, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="4" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">District</Label>
+            <TextBox x:Name="tbDistrict" Grid.Column="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Text="{Binding District, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="6" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">City/Town</Label>
+            <TextBox x:Name="tbCityOrTown" Grid.Column="7" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Text="{Binding CityOrTown, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+        <Grid Grid.Row="7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="88" />
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="88" />
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="516*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">State</Label>
+            <TextBox x:Name="tbState" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Text="{Binding State, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="2" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">Post Code</Label>
+            <TextBox x:Name="tbPostCode" Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Text="{Binding Postcode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="4" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">Country</Label>
+            <TextBox x:Name="tbCountry" Grid.Column="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Text="{Binding Country, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+        <Grid Grid.Row="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="516*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="36"/>
+                <RowDefinition Height="36"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">Shipping Address</Label>
+            <ToggleButton Grid.Row="1" Background="Transparent" Checked="ShippingAddressAsAbove">As Above</ToggleButton>
+            <TextBox x:Name="tbShippingAddress" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
+                     VerticalContentAlignment="Center" Text="{Binding ShippingAddress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" />
+        </Grid>
+        <Grid Grid.Row="9">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="516*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="36"/>
+                <RowDefinition Height="36"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold">Billing Address</Label>
+            <ToggleButton Grid.Row="1" Background="Transparent" Checked="BillingAddressAsAbove">As Above</ToggleButton>
+            <TextBox x:Name="tbBillingAdress" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" 
+                     Text="{Binding BillingAddress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" />
+        </Grid>
+        <Grid Grid.Row="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="516*" />
+                <ColumnDefinition Width="AUTO" />
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lbInfo" VerticalAlignment="Center" FontWeight="Bold" Foreground="Red"/>
+            <Button Grid.Column="1" Background="Transparent" MinWidth="80" Click="UpdateUser">Update</Button>
+        </Grid>
+    </Grid>
+</UserControl>

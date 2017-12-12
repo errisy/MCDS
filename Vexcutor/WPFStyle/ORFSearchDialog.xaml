@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="ORFSearchDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mcds="clr-namespace:MCDS"
+             xmlns:e="clr-namespace:Errisy;assembly=Errisy"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="300" FontFamily="Shruti" FontSize="16">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition />
+            <RowDefinition Height="24" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="2">Minimal Number of Amino Residues</TextBlock>
+            <e:NumberBox Grid.Column="1" NumberType="{x:Type sys:Int32}" Value="{Binding MinimalLength}"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <e:TickBox Grid.Row="0" Content="Use ATG as Start Codon" IsChecked="{Binding UseATG}"/>
+            <e:TickBox Grid.Row="1" Content="Use CTG as Start Codon" IsChecked="{Binding UseCTG}"/>
+            <e:TickBox Grid.Row="2" Content="Use GTG as Start Codon" IsChecked="{Binding UseGTG}"/>
+            <e:TickBox Grid.Row="4" Content="Use TTG as Start Codon" IsChecked="{Binding UseTTG}"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Padding="2" Background="White" FontWeight="Bold" Foreground="Gray" Content="Cancel" Click="Cancel"/>
+            <Button Grid.Column="2" Padding="2" Background="White" FontWeight="Bold" Foreground="Blue" Content="Search" Click="Accept"/>
+        </Grid>
+    </Grid>
+
+</UserControl>

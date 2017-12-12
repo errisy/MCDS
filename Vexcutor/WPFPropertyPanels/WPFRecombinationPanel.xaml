@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="WPFRecombinationPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MCDS"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock FontSize="14" VerticalAlignment="Center">Method: </TextBlock>
+            <ComboBox FontSize="14" Grid.Column="1" VerticalContentAlignment="Center" SelectedItem="{Binding RecombinationMethod}" ItemsSource="{Binding RecombinationMethods}">
+
+            </ComboBox>
+        </Grid>
+        <CheckBox Grid.Row="1" VerticalAlignment="Center" FontSize="14" Content="Exhuastive Assembly" IsChecked="{Binding IsExhuastiveAssembly}"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto" MinWidth="12"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock FontSize="14" Grid.Column="0">Each fragment will be used for </TextBlock>
+            <TextBox Text="{Binding Times}" Grid.Column="1"/>
+            <TextBlock FontSize="14" Grid.Column="2"> times.</TextBlock>
+        </Grid>
+    </Grid>
+</UserControl>

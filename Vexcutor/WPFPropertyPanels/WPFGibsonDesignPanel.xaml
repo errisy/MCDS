@@ -1,0 +1,157 @@
+﻿<UserControl x:Class="WPFGibsonDesignPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:v="clr-namespace:MCDS"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock FontSize="14" FontFamily="Arial" Grid.Column="0" VerticalAlignment="Center">Min Tm:</TextBlock>
+            <TextBox FontSize="14" Margin="0" BorderThickness="0" Grid.Column="1" Text="{Binding MinTmTemperature}"/>
+            <TextBlock FontSize="14" FontFamily="Arial" Grid.Column="2" VerticalAlignment="Center">Min Length:</TextBlock>
+            <TextBox FontSize="14" Margin="0" BorderThickness="0" Grid.Column="3" Text="{Binding MinLength}"/>
+            <Button Content="Reset" Margin="0" Padding="0" Grid.Column="4" Command="{Binding Reset}"/>
+        </Grid>
+        <ListView Grid.Row="1" Name="icDesign" ItemsSource="{Binding Source}">
+            <ItemsControl.ItemTemplateSelector>
+                <v:GibsonTemplateSelector>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="18"/>
+                                <RowDefinition Height="18"/>
+                                <RowDefinition Height="18"/>
+                                <RowDefinition Height="18"/>
+                                <RowDefinition Height="18"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock>ID: <Run Foreground="Blue" Text="{Binding NodeID, Mode=OneWay}"/> Type:<Run Foreground="Red" Text="{Binding NodeType, Mode=OneWay}"/>
+                                <CheckBox IsChecked="{Binding IsForwardAssemblyDirection}" VerticalContentAlignment="Bottom" Content="Reversed Direction"/> 
+                                <v:UpButton Command="{Binding MoveUp}" Width="16" Height="16"/> <v:DownButton Command="{Binding MoveDown}" Width="16" Height="16"/>
+                                MCDM:<Run Foreground="Blue" Text="{Binding MaxCrossDimer, Mode=OneWay}"/> <Run Foreground="Red" Text="{Binding Warning, Mode=OneWay}"/>
+                            </TextBlock>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="2"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="2"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <CheckBox IsChecked="{Binding IsForwardFixed}">
+                                    <TextBlock VerticalAlignment="Center">Fixed</TextBlock>
+                                </CheckBox>
+                                <TextBlock Foreground="Gray" Grid.Column="2">
+                                    Name: <Run Foreground="Blue" Text="{Binding ForwardPrimerName, Mode=OneWay}"/>
+                                    L:<Run Foreground="Blue" Text="{Binding ForwardPrimerLength, Mode=OneWay}"/>
+                                    A:<Run Foreground="Blue" Text="{Binding ForwardTm, Mode=OneWay, StringFormat=0.0}"/>
+                                    H:<Run Foreground="Blue" Text="{Binding MaxForwardHairpin, Mode=OneWay}"/>
+                                    D:<Run Foreground="Blue" Text="{Binding MaxForwardDimer, Mode=OneWay}"/>
+                                </TextBlock>
+                                <TextBlock Grid.Column="4" Background="White">
+                                    <Underline>
+                                        <Run Foreground="Blue" Text="{Binding ForwardPrimerAttached, Mode=OneWay}"/>
+                                        <Run Foreground="Gray" Text="{Binding ForwardPrimerAnnealing, Mode=OneWay}"/>
+                                    </Underline>
+                                    <Run Foreground="Gray" Text="{Binding ForwardPrimerNonAnnealing, Mode=OneWay}"/>
+                                    <TextBlock.ToolTip>
+                                        <TextBlock Grid.Column="2" Background="White">
+                                            <Underline>
+                                                <Run Foreground="Blue" Text="{Binding ForwardPrimerAttached, Mode=OneWay}"/>
+                                                <Run Foreground="Gray" Text="{Binding ForwardPrimerAnnealing, Mode=OneWay}"/>
+                                            </Underline>
+                                            <Run Foreground="Gray" Text="{Binding ForwardPrimerNonAnnealing, Mode=OneWay}"/>
+                                        </TextBlock>
+                                    </TextBlock.ToolTip>
+                                </TextBlock>
+                            </Grid>
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="2"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="2"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <CheckBox IsChecked="{Binding IsReverseFixed}">
+                                    <TextBlock VerticalAlignment="Center">Fixed</TextBlock>
+                                </CheckBox>
+                                <TextBlock Foreground="Gray" Grid.Column="2">
+                                    Name: <Run Foreground="Blue" Text="{Binding ReversePrimerName, Mode=OneWay}"/>
+                                    L:<Run Foreground="Blue" Text="{Binding ReversePrimerLength, Mode=OneWay}"/>
+                                    A:<Run Foreground="Blue" Text="{Binding ReverseTm, Mode=OneWay, StringFormat=0.0}"/>
+                                    H:<Run Foreground="Blue" Text="{Binding MaxReverseHairpin, Mode=OneWay}"/>
+                                    D:<Run Foreground="Blue" Text="{Binding MaxReverseDimer, Mode=OneWay}"/>
+                                </TextBlock>
+                                <TextBlock Grid.Column="4" Background="White">
+                                    <Underline>
+                                        <Run Foreground="Blue" Text="{Binding ReversePrimerAttached, Mode=OneWay}"/>
+                                        <Run Foreground="Gray" Text="{Binding ReversePrimerAnnealing, Mode=OneWay}"/>
+                                    </Underline>
+                                    <Run Foreground="Gray" Text="{Binding ReversePrimerNonAnnealing, Mode=OneWay}"/>
+                                    <TextBlock.ToolTip>
+                                        <TextBlock Grid.Column="2" Background="White">
+                                            <Underline>
+                                                <Run Foreground="Blue" Text="{Binding ReversePrimerAttached, Mode=OneWay}"/>
+                                                <Run Foreground="Gray" Text="{Binding ReversePrimerAnnealing, Mode=OneWay}"/>
+                                            </Underline>
+                                            <Run Foreground="Gray" Text="{Binding ReversePrimerNonAnnealing, Mode=OneWay}"/>
+                                        </TextBlock>
+                                    </TextBlock.ToolTip>
+                                </TextBlock>
+                            </Grid>
+                            <TextBlock Grid.Row="3"><Run Foreground="Gray" Text="{Binding ForwardLeadingTail, Mode=OneWay}"/><Run Foreground="Red" Text="{Binding ForwardAnnealingTail, Mode=OneWay}"/><Run Foreground="Gray" Text="{Binding ForwardFollowingTail, Mode=OneWay}"/> Tm:<Run Foreground="Gray" Text="{Binding ForwardAnnealingTm, Mode=OneWay}"/></TextBlock>
+                            <TextBlock Grid.Row="4"><Run Foreground="Gray" Text="{Binding ReverseLeadingTail, Mode=OneWay}"/><Run Foreground="Red" Text="{Binding ReverseAnnealingTail, Mode=OneWay}"/><Run Foreground="Gray" Text="{Binding ReverseFollowingTail, Mode=OneWay}"/> Tm:<Run Foreground="Gray" Text="{Binding ReverseAnnealingTm, Mode=OneWay}"/></TextBlock>
+
+                        </Grid>
+                    </DataTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="18"/>
+                                <RowDefinition Height="18"/>
+                                <RowDefinition Height="18"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0">ID:<Run Foreground="Blue" Text="{Binding NodeID, Mode=OneWay}"/> Type:<Run Foreground="Red" Text="{Binding NodeType, Mode=OneWay}"/>
+                                <CheckBox IsChecked="{Binding IsForwardAssemblyDirection}" VerticalContentAlignment="Bottom" Content="Reversed Direction"/>
+                                <v:UpButton Command="{Binding MoveUp}" Width="16" Height="16"/> <v:DownButton Command="{Binding MoveDown}" Width="16" Height="16"/>
+                                <Run Foreground="Red" Text="{Binding Warning, Mode=OneWay}"/></TextBlock>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" ToolTip="Offset for the binding site." Margin="1,0,1,0">Offset</TextBlock>
+                                <TextBox Grid.Column="1" Padding="0,1,0,1" BorderThickness="0" Background="Cyan" Text="{Binding ForwardLeadingTailLength}"/>
+                                <TextBlock Grid.Column="2" Margin="1,0,1,0"><Run Foreground="Red" Text="{Binding ForwardLeadingTail, Mode=OneWay}"/><Underline><Run Foreground="Red" Text="{Binding ForwardAnnealingTail, Mode=OneWay}"/></Underline><Run Foreground="Gray" Text="{Binding ForwardFollowingTail, Mode=OneWay}"/> Tm:<Run Foreground="Gray" Text="{Binding ForwardAnnealingTm, Mode=OneWay, StringFormat=0.00}"/></TextBlock>
+                            </Grid>
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" ToolTip="Offset for the binding site." Margin="1,0,1,0">Offset</TextBlock>
+                                <TextBox Grid.Column="1" Padding="0,1,0,1" BorderThickness="0" Background="Yellow" Text="{Binding ReverseLeadingTailLength}"/>
+                                <TextBlock Grid.Column="2" Margin="1,0,1,0"><Run Foreground="Red" Text="{Binding ReverseLeadingTail, Mode=OneWay}"/><Underline><Run Foreground="Red" Text="{Binding ReverseAnnealingTail, Mode=OneWay}"/></Underline><Run Foreground="Gray" Text="{Binding ReverseFollowingTail, Mode=OneWay}"/> Tm:<Run Foreground="Gray" Text="{Binding ReverseAnnealingTm, Mode=OneWay, StringFormat=0.00}"/></TextBlock>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </v:GibsonTemplateSelector>
+            </ItemsControl.ItemTemplateSelector>
+        </ListView>
+    </Grid>
+</UserControl>

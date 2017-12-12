@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="WPFPropertyGeneralPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock VerticalAlignment="Center" Grid.Column="0" Padding="2" Foreground="Gray" >File Location:</TextBlock>
+            <TextBlock VerticalAlignment="Center" Grid.Column="1" Padding="2" Foreground="Blue" Text="{Binding FileAddress}"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="1" Height="25" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock VerticalAlignment="Center" Grid.Column="0" Padding="2" Foreground="Gray" >Number of Items:</TextBlock>
+            <TextBlock VerticalAlignment="Center" Grid.Column="1" Padding="2" Foreground="Blue" Text="{Binding NumberOfItems}"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="2" Height="25" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock VerticalAlignment="Center" Grid.Column="0" Padding="2" Foreground="Gray" >Enzymes:</TextBlock>
+            <TextBox VerticalAlignment="Center" Grid.Column="1" Padding="2" Foreground="Blue" Text="{Binding EnzymeString}"></TextBox>
+        </Grid>
+        <TextBlock Grid.Row="4" VerticalAlignment="Center" Margin="2">Project Summary</TextBlock>
+        <TextBox Grid.Row="5" Text="{Binding ProjectSummary}"/>
+    </Grid>
+</UserControl>

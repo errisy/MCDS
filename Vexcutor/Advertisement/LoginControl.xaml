@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="LoginControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:my="clr-namespace:MCDS" 
+             mc:Ignorable="d" 
+             d:DesignHeight="175" d:DesignWidth="537">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="120" />
+        </Grid.RowDefinitions>
+        <my:EdgeLabel FontSize="36" FontWeight="Bold" Fill="Red" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <my:EdgeLabel.Effect>
+                <DropShadowEffect Color="#84222222" Opacity="0.5" BlurRadius="4" />
+            </my:EdgeLabel.Effect>
+            <my:EdgeLabel.Stroke>
+                <LinearGradientBrush>
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="Purple" Offset="0" />
+                </LinearGradientBrush>
+            </my:EdgeLabel.Stroke>
+            Synthenome Vexcutor Login</my:EdgeLabel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="304*" />
+                <ColumnDefinition Width="313*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32" />
+                <RowDefinition Height="32" />
+                <RowDefinition Height="32" />
+                <RowDefinition Height="24" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold" FontSize="18">User Name</Label>
+            <Label Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold" FontSize="18">Password</Label>
+            <TextBlock Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold" FontSize="18">
+                <Run>Not a user?&#160;&#160;</Run><Underline MouseUp="Register" Cursor="Hand" Foreground="Blue">
+                    <Underline.Style>
+                        <Style TargetType="Underline">
+                            <Style.Triggers>
+                        <EventTrigger RoutedEvent="MouseDown">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard Storyboard.TargetProperty="(Underline.Foreground)">
+                                        <ObjectAnimationUsingKeyFrames>
+                                            <ObjectKeyFrameCollection>
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Brush>Red</Brush>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectKeyFrameCollection>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseUp">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard Storyboard.TargetProperty="(Underline.Foreground)">
+                                        <ObjectAnimationUsingKeyFrames>
+                                            <ObjectKeyFrameCollection>
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Brush>Blue</Brush>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectKeyFrameCollection>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Underline.Style>Get One!</Underline></TextBlock>
+            <TextBox x:Name="tbUserName" BorderBrush="Red" Grid.Row="0" Grid.Column="1" Margin="10,1,10,2" FontSize="18" VerticalContentAlignment="Center"  KeyDown="LoginKeyDown"/>
+            <!--<my:AutoCompletePopup x:Name="acpUserName"  ConnectedTextBox="{Binding ElementName=tbUserName}" MaxWidth="600" MaxHeight="400"/>-->
+            <PasswordBox x:Name="pbPassword" BorderBrush="Purple" PasswordChar="*" Grid.Row="1" Grid.Column="1" Margin="10,1,10,2"  FontSize="18" VerticalContentAlignment="Center" KeyDown="LoginKeyDown"/>
+            <Button x:Name="btnLogin" Click="Login" Background="Transparent" Grid.Row="2" Grid.Column="1" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" Margin="10,1,10,2">
+                <TextBlock><Underline Foreground="Red">Login</Underline></TextBlock>
+            </Button>
+            <my:EdgeLabel x:Name="elInfo" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Right" Stroke="RoyalBlue" FontStyle="Italic" >Please Login ...</my:EdgeLabel>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="WPFCancelRun"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MCDS"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="300" FontFamily="Arial" FontSize="16">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock TextWrapping="Wrap">
+            The Current Calculation "<Run Foreground="Red" Text="{Binding Operation, Mode=OneWay}"/>" has been running for <Run Foreground="Red" Text="{Binding Time, Mode=OneWay}"/> seconds If you want to abort it, please click the "Abort" button below.
+        </TextBlock>
+        <Grid Grid.Row="1">
+            <Button Content="Abort" FontWeight="Bold" Foreground="Red" Command="{Binding Cancel}"/>        
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,28 @@
+﻿<e:ExpanderBase x:Class="Expander"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:e="clr-namespace:Errisy"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="100">
+    <e:ExpanderBase.Template>
+        <ControlTemplate TargetType="e:ExpanderBase">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="Auto" Name="_ContentRow"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <e:ExpanderButton x:Name="_ExpanderButton" IsChecked="{TemplateBinding IsExpanded}"/>
+                    <ContentPresenter Grid.Column="1" ContentSource="Header"/>
+                </Grid>
+                <ContentPresenter Grid.Row="1" ContentSource="Content"/>
+            </Grid>
+        </ControlTemplate>
+    </e:ExpanderBase.Template>
+</e:ExpanderBase>

@@ -1,0 +1,59 @@
+﻿<CheckBox x:Class="TickToggleButton"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:ex="http://schemas.microsoft.com/expression/2010/effects"
+      xmlns:e="clr-namespace:Errisy"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" d:DesignHeight="24">
+    <CheckBox.Template>
+        <ControlTemplate TargetType="{x:Type CheckBox}">
+            <Border Name="HostBorder" BorderThickness="0" CornerRadius="0" Background="Transparent">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{TemplateBinding ActualHeight}"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Name="TickBox" StrokeThickness="3" Stroke="Gray" Margin="1,1,1,1"/>
+                    <e:CheckTick x:Name="CheckTick" Margin="2,2,2,2"/>
+                    <ContentPresenter Name="Content" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                </Grid>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground">
+                        <Setter.Value>
+                            <SolidColorBrush Color="Blue"/>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter TargetName="TickBox" Property="Fill">
+                        <Setter.Value>
+                            <SolidColorBrush Color="#BBBBBB"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Foreground">
+                        <Setter.Value>
+                            <SolidColorBrush Color="DarkRed"/>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter TargetName="TickBox" Property="Fill">
+                        <Setter.Value>
+                            <SolidColorBrush Color="#888888"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter TargetName="CheckTick" Property="Visibility" Value="Visible"/>
+                </Trigger>
+                <Trigger Property="IsChecked" Value="False">
+                    <Setter TargetName="CheckTick" Property="Visibility" Value="Hidden"/>
+                </Trigger>
+                <Trigger Property="IsChecked" Value="{x:Null}">
+                    <Setter TargetName="CheckTick" Property="Visibility" Value="Hidden"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </CheckBox.Template>
+</CheckBox>

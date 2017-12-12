@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="UserAgreement"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:my="clr-namespace:MCDS"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="800" Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="28"/>
+        </Grid.RowDefinitions>
+        <my:EdgeLabel HorizontalAlignment="Center" VerticalAlignment="Top" Stroke="Red" Fill="Gold" FontSize="34">Synthenome Vexcutor End User Agreement</my:EdgeLabel>
+        <ScrollViewer Grid.Row="1">
+            <TextBlock FontFamily="Arial" FontSize="18" TextWrapping="Wrap" Grid.Row="0">
+            1. Synthenome retains all copy rights and intellectual properties of this software. Users have the intellectual properties of their own designs.<LineBreak/>
+            2. The users should never crack or mofidy the software in any manner. Synthenome perserves the right to pursue legal actions againt violations.<LineBreak/>
+            3. This software is provided as it is. It might contain bugs or errors. Synthenome is not responsible to any direct or indirect loss or damage caused or related to this software.<LineBreak/>
+            4. Users who accept ths agreement must provide correct contact name, email address and contact address.<LineBreak/>
+            5. By accepting this agreement, users agree to receive promotion information from synthenome via email or Vexcutor.
+            </TextBlock>
+        </ScrollViewer>
+        <Button Grid.Row="2" Width="120" FontFamily="Arial" HorizontalAlignment="Left" Click="ExitVexcutor" FontSize="18" Background="Transparent" Content="Exit"/>
+        <Button Grid.Row="2" Width="120" FontFamily="Arial" HorizontalAlignment="Right" Click="AcceptVexcutor" FontSize="18" Background="Transparent" Content="Accept"/>
+    </Grid>
+</UserControl>

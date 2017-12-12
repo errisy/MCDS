@@ -1,0 +1,237 @@
+﻿<UserControl x:Class="wpfSummary"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:v="clr-namespace:MCDS"
+             xmlns:e="clr-namespace:Errisy;assembly=Errisy"
+             mc:Ignorable="d" 
+             d:DesignHeight="314" d:DesignWidth="963" xmlns:my="clr-namespace:MCDS">
+        
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <my:EdgeLabel HorizontalAlignment="Center" VerticalAlignment="Top" Stroke="Black" FontWeight="Bold" FontSize="34" Content="Molecular Cloning Project Summary">
+            <my:EdgeLabel.Fill>
+                <LinearGradientBrush>
+                    <GradientStop Color="Red" Offset="0"/>
+                    <GradientStop Color="Yellow" Offset="0.25"/>
+                    <GradientStop Color="Green" Offset="0.5"/>
+                    <GradientStop Color="Cyan" Offset="0.75"/>
+                    <GradientStop Color="Blue" Offset="1"/>
+                </LinearGradientBrush>
+            </my:EdgeLabel.Fill>
+            <my:EdgeLabel.Effect>
+                <DropShadowEffect Opacity="0.4" Color="Blue"/>
+            </my:EdgeLabel.Effect>
+        </my:EdgeLabel>
+        <TabControl Grid.Row="1">
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock FontFamily="Arial" FontSize="18" FontWeight="Bold">Project Information</TextBlock>
+                </TabItem.Header>
+                <TextBox AcceptsReturn="True" AcceptsTab="True" Text="{Binding ProjectSummary}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock FontFamily="Arial" FontSize="18" FontWeight="Bold">Primers</TextBlock>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="1" Foreground="Blue" Content="Copy All" Command="{Binding CopyAllPrimers}"/>
+                        <Button Grid.Column="2" Foreground="Blue" Content="Copy New" Command="{Binding CopyNewPrimers}"/>
+                        <Button Grid.Column="3" Foreground="Blue" Content="Record New Order" Command="{Binding RecordNewPrimers}"/>
+                    </Grid>
+                    <DataGrid AutoGenerateColumns="False" Grid.Row="1" IsReadOnly="True" ItemsSource="{Binding Primers}" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False">
+                        <DataGrid.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="LightYellow" />
+                                        <Setter Property="Foreground" Value="Black" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.CellStyle>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="Sequence" Binding="{Binding Sequence}"/>
+                            <DataGridTextColumn Header="Length" Binding="{Binding Length}"/>
+                            <DataGridTextColumn Header="Is Synthesized" Binding="{Binding IsSynthesized}"/>
+                            <DataGridTemplateColumn Header="Records">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ItemsControl ItemsSource="{Binding MatchedEntries}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                            <ColumnDefinition Width="2"/>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                            <ColumnDefinition Width="2"/>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock Grid.Column="0">Project:<Run Foreground="Blue" Text="{Binding Project}"/></TextBlock>
+                                                        <TextBlock Grid.Column="2">Name:<Run Foreground="Blue" Text="{Binding Name}"/></TextBlock>
+                                                        <TextBlock Grid.Column="4">Date:<Run Foreground="Blue" Text="{Binding OrderDate}"/></TextBlock>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="Synthesis">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <e:TickBox IsChecked="{Binding Synthesis}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock FontFamily="Arial" FontSize="18" FontWeight="Bold">dsDNA Synthesis</TextBlock>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="1" Foreground="Blue" Content="Copy All" Command="{Binding CopyAllSyntheticDNAs}"/>
+                    </Grid>
+                    <DataGrid AutoGenerateColumns="False" Grid.Row="1" IsReadOnly="True" ItemsSource="{Binding SyntheticDNAs}" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False">
+                        <DataGrid.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="LightYellow" />
+                                        <Setter Property="Foreground" Value="Black" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.CellStyle>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="Sequence" Binding="{Binding Sequence}" Width="360"/>
+                            <DataGridTextColumn Header="Length" Binding="{Binding Length}"/>
+                            <DataGridTemplateColumn Header="Synthesis">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="Copy FASTA" Command="{Binding Copy}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock FontFamily="Arial" FontSize="18" FontWeight="Bold">Restriction Enzymes</TextBlock>
+                </TabItem.Header>
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding RestrictionEnzymes}">
+                    <DataGrid.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="LightYellow" />
+                                    <Setter Property="Foreground" Value="Black" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.CellStyle>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock FontFamily="Arial" FontSize="18" FontWeight="Bold">Modification Enzymes</TextBlock>
+                </TabItem.Header>
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding ModificationEnzymes}" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" >
+                    <DataGrid.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="LightYellow" />
+                                    <Setter Property="Foreground" Value="Black" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.CellStyle>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+        
+        <!--<ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Expander Grid.Row="0">
+                    <Expander.Header>
+                        <TextBlock FontFamily="Arial" FontSize="18" FontWeight="Bold">Project Information</TextBlock>
+                    </Expander.Header>
+
+                </Expander>
+                <Expander Grid.Row="1">
+                    <Expander.Header>
+                        <TextBlock FontFamily="Arial" FontSize="18" FontWeight="Bold">Primers</TextBlock>
+                    </Expander.Header>
+                    
+                </Expander>
+                <Expander Grid.Row="2">
+                    <Expander.Header>
+                        <TextBlock FontFamily="Arial" FontSize="18" FontWeight="Bold">dsDNA Synthesis</TextBlock>
+                    </Expander.Header>
+                    
+                </Expander>
+                <Expander Grid.Row="3">
+                    <Expander.Header>
+                        <TextBlock FontFamily="Arial" FontSize="18" FontWeight="Bold">Restriction Enzymes</TextBlock>
+                    </Expander.Header>
+                    
+                </Expander>
+                <Expander Grid.Row="4">
+                    <Expander.Header>
+                        <TextBlock FontFamily="Arial" FontSize="18" FontWeight="Bold">Modification Enzymes</TextBlock>
+                    </Expander.Header>
+                    
+                </Expander>
+            </Grid>
+        </ScrollViewer>-->
+
+    </Grid>
+</UserControl>

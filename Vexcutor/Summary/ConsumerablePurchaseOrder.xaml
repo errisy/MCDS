@@ -1,0 +1,389 @@
+﻿<UserControl x:Class="ConsumerablePurchaseOrder"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:my="clr-namespace:MCDS"
+             xmlns:sc="clr-namespace:SynContract;assembly=SynContract"
+             mc:Ignorable="d" 
+             d:DesignHeight="678" d:DesignWidth="745">
+
+
+    <Grid Grid.Column="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36" />
+            <RowDefinition Height="295*" />
+        </Grid.RowDefinitions>
+        <my:EdgeLabel VerticalAlignment="Center" HorizontalAlignment="Center" Stroke="GreenYellow" Fill="Gray" FontSize="28">
+            <my:EdgeLabel.Effect>
+                <DropShadowEffect Opacity="0.4" />
+            </my:EdgeLabel.Effect>
+            General Consumerables
+        </my:EdgeLabel>
+        <Grid Grid.Row="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="24" />
+                <RowDefinition Height="32" />
+                <RowDefinition Height="200" />
+                <RowDefinition Height="32*" />
+                <RowDefinition Height="24" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Name="gdPriceInfo">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="24" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="1" Padding="4,0,0,0" Foreground="Gray">
+                *We simply forward your order to our partners. You can choose your preferred suppliers.
+                </TextBlock>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="AUTO" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="128" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" HorizontalAlignment="Right" Padding="2" VerticalAlignment="Center" FontSize="14">Total Items:</Label>
+                <TextBlock Grid.Column="1" HorizontalAlignment="Right" Padding="2" VerticalAlignment="Center" FontSize="14" Foreground="Blue" FontWeight="Bold">
+                            <Run Text="{Binding TotalItems, UpdateSourceTrigger=PropertyChanged}"></Run></TextBlock>
+                <!--<Button Background="Transparent" Click="AddItem"  HorizontalAlignment="Right" Grid.Column="3" FontSize="16" Foreground="Blue" FontWeight="Bold">
+                    <my:EdgeLabel VerticalAlignment="Center" HorizontalAlignment="Center" Stroke="GreenYellow" Fill="DarkRed" FontSize="24">
+                        <my:EdgeLabel.Effect>
+                            <DropShadowEffect Opacity="0.4" />
+                        </my:EdgeLabel.Effect>
+                        Add Item
+                    </my:EdgeLabel>
+                </Button>
+                <Button Background="Transparent" Click="OrderNow"  HorizontalAlignment="Right" Grid.Column="5" FontSize="16" Foreground="Blue" FontWeight="Bold">
+                    <my:EdgeLabel VerticalAlignment="Center" HorizontalAlignment="Center" Stroke="GreenYellow" Fill="Gray" FontSize="24">
+                        <my:EdgeLabel.Effect>
+                            <DropShadowEffect Opacity="0.4" />
+                        </my:EdgeLabel.Effect>
+                        Order Now
+                    </my:EdgeLabel>
+                </Button>-->
+            </Grid>
+            <FrameworkElement Name="Vectors"/>
+            <DataGrid Grid.Row="2" Background="White" ItemsSource="{Binding Consumerables}" AutoGenerateColumns="False" CanUserAddRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Item Name" Width="120" Binding="{Binding Name}" IsReadOnly="False"/>
+                    <DataGridTextColumn Header="Package Size" Width="100" Binding="{Binding PackageSize}" IsReadOnly="False"/>
+                    <DataGridTextColumn Header="Number" Width="80" Binding="{Binding Number}" IsReadOnly="False"/>
+                    <DataGridTextColumn Header="Note" Width="1*" Binding="{Binding Note}" IsReadOnly="False"/>
+                    <DataGridTemplateColumn Header="Valid" Width="80">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox Checked="ValidCheckChanged" HorizontalAlignment="Center"  Unchecked="ValidCheckChanged" IsChecked="{Binding Valid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="32*" />
+                </Grid.RowDefinitions>
+                <Label Padding="3" Grid.Row="0" FontFamily="Arial" Background="Black" Foreground="Yellow" FontWeight="Bold" Content="* Please choose your preferred vendors. If you don't like synthenome to select a default one for you."/>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Padding="3" Grid.Row="0" Grid.Column="0" FontFamily="Arial" Background="DarkGreen" Foreground="White" FontWeight="Bold" 
+                           Content="Incubation" HorizontalContentAlignment="Center"/>
+                    <Label Padding="3" Grid.Row="0" Grid.Column="1" FontFamily="Arial" Background="DarkGreen" Foreground="White" FontWeight="Bold" 
+                           Content="Plasmid Extraction" HorizontalContentAlignment="Center"/>
+                    <Label Padding="3" Grid.Row="0" Grid.Column="2" FontFamily="Arial" Background="DarkGreen" Foreground="White" FontWeight="Bold" 
+                           Content="Gel Eletrophoresis" HorizontalContentAlignment="Center"/>
+                    <Label Padding="3" Grid.Row="2" Grid.Column="0" FontFamily="Arial" Background="DarkGreen" Foreground="White" FontWeight="Bold" 
+                           Content="Sequencing" HorizontalContentAlignment="Center"/>
+                    <Label Padding="3" Grid.Row="2" Grid.Column="1" FontFamily="Arial" Background="DarkGreen" Foreground="White" FontWeight="Bold" 
+                           Content="PCR" HorizontalContentAlignment="Center"/>
+                    <Label Padding="3" Grid.Row="2" Grid.Column="2" FontFamily="Arial" Background="DarkGreen" Foreground="White" FontWeight="Bold" 
+                           Content="Expression" HorizontalContentAlignment="Center"/>
+                    <ItemsControl Grid.Row="1" Grid.Column="0" Name="gdIncubation" MinHeight="20">
+                        <ItemsControl.Template>
+                            <ControlTemplate>
+                                <ScrollViewer x:Name="ScrollViewer" Padding="{TemplateBinding Padding}">
+                                    <ItemsPresenter />
+                                </ScrollViewer>
+                            </ControlTemplate>
+                        </ItemsControl.Template>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplateSelector>
+                            <my:TemplateSelector>
+                                <my:TypeTemplate DataType="sc:Company">
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="1"/>
+                                                <RowDefinition Height="24"/>
+                                                <RowDefinition Height="AUTO"/>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="AUTO"/>
+                                                <RowDefinition Height="AUTO"/>
+                                                <RowDefinition Height="1"/>
+                                            </Grid.RowDefinitions>
+                                            <Rectangle Grid.Row="0" Fill="Black"/>
+                                            <my:TickToggleButton Grid.Row="1" Content="{Binding Title}" FontSize="16"  Padding="2" Foreground="DarkRed" FontWeight="Bold" Background="Transparent" IsChecked="{Binding IsSelected}"/>
+                                            <TextBlock Grid.Row="2" Foreground="Blue" FontWeight="Bold" Text="{Binding Name}"/>
+                                            <TextBlock Grid.Row="3" Text="{Binding Description}"/>
+                                            <TextBlock Grid.Row="4"><Run>Tel: </Run><Run x:Name="adTel" Text="{Binding Telephone}"/> <Run>Email: </Run><Run Text="{Binding Email}"/></TextBlock>
+                                            <TextBlock Grid.Row="5" Cursor="Hand"><Underline Foreground="Blue"><Run MouseDown="Navigate" Text="{Binding WebAddress}"/></Underline></TextBlock>
+                                            <Rectangle Grid.Row="6" Fill="Black"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </my:TypeTemplate>
+                                <my:TypeTemplate DataType="my:SynthenomeConstructionPrice">
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="30" />
+                                                <RowDefinition Height="80" />
+                                                <RowDefinition Height="30" />
+                                            </Grid.RowDefinitions>
+                                            <my:EdgeLabel HorizontalAlignment="Center" VerticalAlignment="Top" Stroke="Black" FontWeight="Bold" FontSize="20">
+                                                <my:EdgeLabel.Fill>
+                                                    <LinearGradientBrush>
+                                                        <GradientStop Color="YellowGreen" Offset="0"/>
+                                                        <GradientStop Color="GreenYellow" Offset="0.124"/>
+                                                        <GradientStop Color="Cyan" Offset="0.618"/>
+                                                        <GradientStop Color="BlueViolet" Offset="1"/>
+                                                    </LinearGradientBrush>
+                                                </my:EdgeLabel.Fill>
+                                                <my:EdgeLabel.Effect>
+                                                    <DropShadowEffect Opacity="0.4" Color="Blue"/>
+                                                </my:EdgeLabel.Effect> Synthenome Project
+                                            </my:EdgeLabel>
+                                            <TextBlock Grid.Row="1" TextWrapping="Wrap" Padding="4" >
+            From US$<Run Text="{Binding Path=ConstructionPrice}" />/construction.<LineBreak/>
+            <Run FontStyle="Italic">E. coli</Run> gene knockout, multiple fragment constuction, multple gene integration.
+                                            </TextBlock>
+                                            <Button Grid.Row="2" Background="White" FontFamily="Calibri" FontSize="18" Foreground="RoyalBlue">Get Quotation Now!</Button>
+                                        </Grid>
+                                    </DataTemplate>
+                                </my:TypeTemplate>
+                            </my:TemplateSelector>
+                        </ItemsControl.ItemTemplateSelector>
+                    </ItemsControl>
+                    <ItemsControl Grid.Row="1" Grid.Column="1" Name="gdExtraction" MinHeight="20">
+                        <ItemsControl.Template>
+                            <ControlTemplate>
+                                <ScrollViewer x:Name="ScrollViewer" Padding="{TemplateBinding Padding}">
+                                    <ItemsPresenter />
+                                </ScrollViewer>
+                            </ControlTemplate>
+                        </ItemsControl.Template>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplateSelector>
+                            <my:TemplateSelector>
+                                <my:TypeTemplate DataType="sc:Company">
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="1"/>
+                                                <RowDefinition Height="24"/>
+                                                <RowDefinition Height="AUTO"/>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="AUTO"/>
+                                                <RowDefinition Height="AUTO"/>
+                                                <RowDefinition Height="1"/>
+                                            </Grid.RowDefinitions>
+                                            <Rectangle Grid.Row="0" Fill="Black"/>
+                                            <my:TickToggleButton Grid.Row="1" Content="{Binding Title}" FontSize="16"  Padding="2" Foreground="DarkRed" FontWeight="Bold" Background="Transparent" IsChecked="{Binding IsSelected}"/>
+                                            <TextBlock Grid.Row="2" Foreground="Blue" FontWeight="Bold" Text="{Binding Name}"/>
+                                            <TextBlock Grid.Row="3" Text="{Binding Description}"/>
+                                            <TextBlock Grid.Row="4"><Run>Tel: </Run><Run x:Name="adTel" Text="{Binding Telephone}"/> <Run>Email: </Run><Run Text="{Binding Email}"/></TextBlock>
+                                            <TextBlock Grid.Row="5" Cursor="Hand"><Underline Foreground="Blue"><Run MouseDown="Navigate" Text="{Binding WebAddress}"/></Underline></TextBlock>
+                                            <Rectangle Grid.Row="6" Fill="Black"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </my:TypeTemplate>
+                            </my:TemplateSelector>
+                        </ItemsControl.ItemTemplateSelector>
+                    </ItemsControl>
+                    <ItemsControl Grid.Row="1" Grid.Column="2" Name="gdElectrophoresis" MinHeight="20">
+                        <ItemsControl.Template>
+                            <ControlTemplate>
+                                <ScrollViewer x:Name="ScrollViewer" Padding="{TemplateBinding Padding}">
+                                    <ItemsPresenter />
+                                </ScrollViewer>
+                            </ControlTemplate>
+                        </ItemsControl.Template>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplateSelector>
+                            <my:TemplateSelector>
+                                <my:TypeTemplate DataType="sc:Company">
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="1"/>
+                                                <RowDefinition Height="24"/>
+                                                <RowDefinition Height="AUTO"/>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="AUTO"/>
+                                                <RowDefinition Height="AUTO"/>
+                                                <RowDefinition Height="1"/>
+                                            </Grid.RowDefinitions>
+                                            <Rectangle Grid.Row="0" Fill="Black"/>
+                                            <my:TickToggleButton Grid.Row="1" Content="{Binding Title}" FontSize="16"  Padding="2" Foreground="DarkRed" FontWeight="Bold" Background="Transparent" IsChecked="{Binding IsSelected}"/>
+                                            <TextBlock Grid.Row="2" Foreground="Blue" FontWeight="Bold" Text="{Binding Name}"/>
+                                            <TextBlock Grid.Row="3" Text="{Binding Description}"/>
+                                            <TextBlock Grid.Row="4"><Run>Tel: </Run><Run x:Name="adTel" Text="{Binding Telephone}"/> <Run>Email: </Run><Run Text="{Binding Email}"/></TextBlock>
+                                            <TextBlock Grid.Row="5" Cursor="Hand"><Underline Foreground="Blue"><Run MouseDown="Navigate" Text="{Binding WebAddress}"/></Underline></TextBlock>
+                                            <Rectangle Grid.Row="6" Fill="Black"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </my:TypeTemplate>
+                            </my:TemplateSelector>
+                        </ItemsControl.ItemTemplateSelector>
+                    </ItemsControl>
+                    <ItemsControl Grid.Row="3" Grid.Column="0" Name="gdSequencing" MinHeight="20">
+                        <ItemsControl.Template>
+                            <ControlTemplate>
+                                <ScrollViewer x:Name="ScrollViewer" Padding="{TemplateBinding Padding}">
+                                    <ItemsPresenter />
+                                </ScrollViewer>
+                            </ControlTemplate>
+                        </ItemsControl.Template>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplateSelector>
+                            <my:TemplateSelector>
+                                <my:TypeTemplate DataType="sc:Company">
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="1"/>
+                                                <RowDefinition Height="24"/>
+                                                <RowDefinition Height="AUTO"/>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="AUTO"/>
+                                                <RowDefinition Height="AUTO"/>
+                                                <RowDefinition Height="1"/>
+                                            </Grid.RowDefinitions>
+                                            <Rectangle Grid.Row="0" Fill="Black"/>
+                                            <my:TickToggleButton Grid.Row="1" Content="{Binding Title}" FontSize="16"  Padding="2" Foreground="DarkRed" FontWeight="Bold" Background="Transparent" IsChecked="{Binding IsSelected}"/>
+                                            <TextBlock Grid.Row="2" Foreground="Blue" FontWeight="Bold" Text="{Binding Name}"/>
+                                            <TextBlock Grid.Row="3" Text="{Binding Description}"/>
+                                            <TextBlock Grid.Row="4"><Run>Tel: </Run><Run x:Name="adTel" Text="{Binding Telephone}"/> <Run>Email: </Run><Run Text="{Binding Email}"/></TextBlock>
+                                            <TextBlock Grid.Row="5" Cursor="Hand"><Underline Foreground="Blue"><Run MouseDown="Navigate" Text="{Binding WebAddress}"/></Underline></TextBlock>
+                                            <Rectangle Grid.Row="6" Fill="Black"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </my:TypeTemplate>
+                            </my:TemplateSelector>
+                        </ItemsControl.ItemTemplateSelector>
+                    </ItemsControl>
+                    <ItemsControl Grid.Row="3" Grid.Column="1" Name="gdPCR" MinHeight="20">
+                        <ItemsControl.Template>
+                            <ControlTemplate>
+                                <ScrollViewer x:Name="ScrollViewer" Padding="{TemplateBinding Padding}">
+                                    <ItemsPresenter />
+                                </ScrollViewer>
+                            </ControlTemplate>
+                        </ItemsControl.Template>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplateSelector>
+                            <my:TemplateSelector>
+                                <my:TypeTemplate DataType="sc:Company">
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="1"/>
+                                                <RowDefinition Height="24"/>
+                                                <RowDefinition Height="AUTO"/>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="AUTO"/>
+                                                <RowDefinition Height="AUTO"/>
+                                                <RowDefinition Height="1"/>
+                                            </Grid.RowDefinitions>
+                                            <Rectangle Grid.Row="0" Fill="Black"/>
+                                            <my:TickToggleButton Grid.Row="1" Content="{Binding Title}" FontSize="16"  Padding="2" Foreground="DarkRed" FontWeight="Bold" Background="Transparent" IsChecked="{Binding IsSelected}"/>
+                                            <TextBlock Grid.Row="2" Foreground="Blue" FontWeight="Bold" Text="{Binding Name}"/>
+                                            <TextBlock Grid.Row="3" Text="{Binding Description}"/>
+                                            <TextBlock Grid.Row="4"><Run>Tel: </Run><Run x:Name="adTel" Text="{Binding Telephone}"/> <Run>Email: </Run><Run Text="{Binding Email}"/></TextBlock>
+                                            <TextBlock Grid.Row="5" Cursor="Hand"><Underline Foreground="Blue"><Run MouseDown="Navigate" Text="{Binding WebAddress}"/></Underline></TextBlock>
+                                            <Rectangle Grid.Row="6" Fill="Black"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </my:TypeTemplate>
+                            </my:TemplateSelector>
+                        </ItemsControl.ItemTemplateSelector>
+                    </ItemsControl>
+                    <ItemsControl Grid.Row="3" Grid.Column="2" Name="gdExpression" MinHeight="20">
+                        <ItemsControl.Template>
+                            <ControlTemplate>
+                                <ScrollViewer x:Name="ScrollViewer" Padding="{TemplateBinding Padding}">
+                                    <ItemsPresenter />
+                                </ScrollViewer>
+                            </ControlTemplate>
+                        </ItemsControl.Template>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplateSelector>
+                            <my:TemplateSelector>
+                                <my:TypeTemplate DataType="sc:Company">
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="1"/>
+                                                <RowDefinition Height="24"/>
+                                                <RowDefinition Height="AUTO"/>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="AUTO"/>
+                                                <RowDefinition Height="AUTO"/>
+                                                <RowDefinition Height="1"/>
+                                            </Grid.RowDefinitions>
+                                            <Rectangle Grid.Row="0" Fill="Black"/>
+                                            <my:TickToggleButton Grid.Row="1" Content="{Binding Title}" FontSize="16"  Padding="2" Foreground="DarkRed" FontWeight="Bold" Background="Transparent" IsChecked="{Binding IsSelected}"/>
+                                            <TextBlock Grid.Row="2" Foreground="Blue" FontWeight="Bold" Text="{Binding Name}"/>
+                                            <TextBlock Grid.Row="3" Text="{Binding Description}"/>
+                                            <TextBlock Grid.Row="4"><Run>Tel: </Run><Run x:Name="adTel" Text="{Binding Telephone}"/> <Run>Email: </Run><Run Text="{Binding Email}"/></TextBlock>
+                                            <TextBlock Grid.Row="5" Cursor="Hand"><Underline Foreground="Blue"><Run MouseDown="Navigate" Text="{Binding WebAddress}"/></Underline></TextBlock>
+                                            <Rectangle Grid.Row="6" Fill="Black"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </my:TypeTemplate>
+                            </my:TemplateSelector>
+                        </ItemsControl.ItemTemplateSelector>
+                    </ItemsControl>
+                </Grid>
+            </Grid>
+            <Label Name="lbInfo" Padding="3" Grid.Row="4" Content="Order Enzymes." />
+        </Grid>
+
+    </Grid>
+</UserControl>

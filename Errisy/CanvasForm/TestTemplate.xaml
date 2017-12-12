@@ -1,0 +1,56 @@
+﻿<Style
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:e="clr-namespace:Errisy"
+    TargetType="{x:Type e:CanvasFormBase}"
+    >
+    <Style.Setters>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type e:CanvasFormBase}">
+                    <Border>
+                        <Grid Visibility="Collapsed">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="{TemplateBinding TopBorderSize}"/>
+                                <RowDefinition Height="{TemplateBinding HeaderSize}"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="{TemplateBinding BottomBorderSize}"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="{TemplateBinding LeftBorderSize}"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="{TemplateBinding RightBorderSize}"/>
+                            </Grid.ColumnDefinitions>
+                            <Rectangle Name="_RectNW" Grid.Row="0" Grid.Column="0" Fill="{TemplateBinding BorderBrush}" Cursor="SizeNWSE"/>
+                            <Rectangle Name="_RectN" Grid.Row="0" Grid.Column="1" Fill="{TemplateBinding BorderBrush}" Cursor="SizeNS"/>
+                            <Rectangle Name="_RectNE" Grid.Row="0" Grid.Column="2" Fill="{TemplateBinding BorderBrush}" Cursor="SizeNESW"/>
+                            <Rectangle Name="_RectW" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Fill="{TemplateBinding BorderBrush}" Cursor="SizeWE"/>
+                            <Rectangle Name="_RectE" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Fill="{TemplateBinding BorderBrush}" Cursor="SizeWE"/>
+                            <Rectangle Name="_RectSW" Grid.Row="3" Grid.Column="0" Fill="{TemplateBinding BorderBrush}" Cursor="SizeNESW"/>
+                            <Rectangle Name="_RectS" Grid.Row="3" Grid.Column="1" Fill="{TemplateBinding BorderBrush}" Cursor="SizeNS"/>
+                            <Rectangle Name="_RectSE" Grid.Row="3" Grid.Column="2" Fill="{TemplateBinding BorderBrush}" Cursor="SizeNWSE"/>
+                            <Border Name="_HeaderBorder" Grid.Row="1" Grid.Column="1" Background="{TemplateBinding HeaderBackground}">
+                                <Grid Name="_Grid">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ContentPresenter Grid.Column="0" ContentSource="Header" DataContext="{TemplateBinding DataContext}"/>
+                                    <e:CloseButton Name="CloseButton" Grid.Column="1" Width="{Binding ElementName=_Grid, Path=ActualHeight}"/>
+                                </Grid>
+                            </Border>
+                            <ScrollViewer Grid.Row="2" Grid.Column="1" Background="{TemplateBinding Background}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Top">
+                                <ContentPresenter ContentSource="Content" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </ScrollViewer>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasCloseButton" Value="False">
+                            <Setter TargetName="CloseButton" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style.Setters>
+</Style>

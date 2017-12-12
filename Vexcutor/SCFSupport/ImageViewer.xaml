@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="ImageViewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:my="clr-namespace:MCDS"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="600">
+    <Grid>
+        <Image Source="{Binding Data, Converter={my:Bytes2Bitmap}}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Uniform"/>
+    </Grid>
+</UserControl>

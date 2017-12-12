@@ -1,0 +1,21 @@
+﻿<e:DirectItemsControl x:Class="DirectCanvasItemsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:e="clr-namespace:Errisy"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <e:DirectItemsControl.Template>
+        <ControlTemplate TargetType="{x:Type e:DirectItemsControl}">
+            <Border Background="{TemplateBinding Background}" >
+                <e:DirectItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+            </Border>
+        </ControlTemplate>
+    </e:DirectItemsControl.Template>
+    <e:DirectItemsControl.ItemsPanel>
+        <DataTemplate>
+            <e:CanvasEditor/>
+        </DataTemplate>
+    </e:DirectItemsControl.ItemsPanel>
+</e:DirectItemsControl>

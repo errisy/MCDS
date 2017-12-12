@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="ConstructionProject"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:my="clr-namespace:MCDS"
+             mc:Ignorable="d" 
+             d:DesignHeight="42" d:DesignWidth="832">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="42" />
+            <!--<RowDefinition Height="36" />
+            <RowDefinition Height="231*" />
+            <RowDefinition Height="24" />-->
+        </Grid.RowDefinitions>
+        <my:EdgeLabel HorizontalAlignment="Center" VerticalAlignment="Top" Stroke="Black" FontWeight="Bold" FontSize="34" Content="Molecular Cloning Project Summary">
+            <my:EdgeLabel.Fill>
+                <LinearGradientBrush>
+                    <GradientStop Color="Red" Offset="0"/>
+                    <GradientStop Color="Yellow" Offset="0.25"/>
+                    <GradientStop Color="Green" Offset="0.5"/>
+                    <GradientStop Color="Cyan" Offset="0.75"/>
+                    <GradientStop Color="Blue" Offset="1"/>
+                </LinearGradientBrush>
+            </my:EdgeLabel.Fill>
+            <my:EdgeLabel.Effect>
+                <DropShadowEffect Opacity="0.4" Color="Blue"/>
+            </my:EdgeLabel.Effect>
+        </my:EdgeLabel>
+        <!--<TextBlock Grid.Row="1" HorizontalAlignment="Center" FontSize="22" VerticalAlignment="Center" Foreground="Red">You can focus on design and output, we construct them for you!</TextBlock>
+        <TextBlock Grid.Row="2" Name="tbInformation" FontFamily="Calibri" TextWrapping="Wrap" FontSize="18" Padding="12" Foreground="#FF4E4E4E" HorizontalAlignment="Center">
+            <TextBlock.Effect>
+                <DropShadowEffect Opacity="0.2" />
+            </TextBlock.Effect>
+            <Run>Synthenome provides professional genetic project services.</Run>
+            <LineBreak/>
+            <Run FontStyle="Italic">E. coli</Run>&#160;<Run>plasmid construction starts from US$</Run><Run Text="{Binding ConstructionPrice}" /><Run>/construction.</Run>
+            <LineBreak/>
+            <Run>1)&#160;</Run><Run FontStyle="Italic">E. coli</Run><Run>&#160;plasmid construction.</Run>
+            <LineBreak/>
+            <Run>2)&#160;</Run><Run FontStyle="Italic">E. coli</Run><Run>&#160;gene knockout.</Run>
+            <LineBreak/>
+            <Run>3) Multiple fragment ligation.</Run>
+            <LineBreak/>
+            <Run>4) Quick integration of up to 10 fragments onto&#160;</Run><Run FontStyle="Italic">E. coli</Run><Run>&#160;genome.</Run>
+            <LineBreak/>
+        </TextBlock>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="AUTO"/>
+            </Grid.ColumnDefinitions>
+            <Label Name="lbInfo" Padding="3"  Content="By clicking the button on the right, your current project will be sent to synthenome for pricing." />
+            <Button Grid.Column="1" HorizontalAlignment="Right" Click="GetQuotation"  Background="LightYellow" FontSize="16" FontWeight="Bold"
+                Foreground="RoyalBlue">
+                <my:EdgeLabel Stroke="RoyalBlue" FontFamily="Arial">Get Quotation Now!</my:EdgeLabel>
+            </Button>
+        </Grid>-->
+    </Grid>
+</UserControl>

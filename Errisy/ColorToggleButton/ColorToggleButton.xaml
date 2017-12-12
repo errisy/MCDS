@@ -1,0 +1,20 @@
+﻿<e:ColorToggleButtonBase x:Class="ColorToggleButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:e="clr-namespace:Errisy"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="20" d:DesignWidth="20">
+    <e:ColorToggleButtonBase.Template>
+        <ControlTemplate TargetType="{x:Type e:ColorToggleButtonBase}">
+            <Grid>
+                <Rectangle Name="_Rect" StrokeThickness="1" Stroke="{TemplateBinding BorderBrush}" Fill="{TemplateBinding FillBrush}"/>
+                <TextBlock Name="_Text" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" FontStretch="{TemplateBinding FontStretch}" 
+                           FontStyle="{TemplateBinding FontStyle}" FontWeight="{TemplateBinding FontWeight}" Foreground="{TemplateBinding Foreground}">
+                    <Run Text="{TemplateBinding Text}"/>
+                </TextBlock>
+            </Grid>
+        </ControlTemplate>
+    </e:ColorToggleButtonBase.Template>
+</e:ColorToggleButtonBase>

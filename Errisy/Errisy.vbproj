@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <RootNamespace>Errisy</RootNamespace>
+    <AssemblyName>Errisy</AssemblyName>
+    <OutputType>Library</OutputType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <ProjectGuid>{AF8B57A7-D2DA-4917-A169-89701351612F}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <IncrementalBuild>true</IncrementalBuild>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Errisy.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <IncrementalBuild>false</IncrementalBuild>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Errisy.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>DullahanKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Effects, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BindingConverter\Converters.vb" />
+    <Compile Include="Buttons\AddButton.xaml.vb">
+      <DependentUpon>AddButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Buttons\BriefButton.xaml.vb">
+      <DependentUpon>BriefButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Buttons\BriefButtonBase.vb" />
+    <Compile Include="Buttons\CircleButton.xaml.vb">
+      <DependentUpon>CircleButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Buttons\ExpanderButton.xaml.vb">
+      <DependentUpon>ExpanderButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Buttons\RemoveButton.xaml.vb">
+      <DependentUpon>RemoveButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CanvasEditor\CanvasEditor.vb" />
+    <Compile Include="CanvasEditor\IMouseInputProvider.vb" />
+    <Compile Include="CanvasEditor\ISelectionProvider.vb" />
+    <Compile Include="CanvasEditor\IZoom.vb" />
+    <Compile Include="CanvasForm\CanvasForm.vb" />
+    <Compile Include="CanvasForm\CanvasFormBase.vb" />
+    <Compile Include="CanvasItemsControl\CanvasItemsControl.xaml.vb">
+      <DependentUpon>CanvasItemsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CanvasItemsControl\CanvasItemsControlBase.vb" />
+    <Compile Include="CanvasItemsControl\DirectCanvasItemsControl.xaml.vb">
+      <DependentUpon>DirectCanvasItemsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ColorToggleButton\ColorToggleButton.xaml.vb">
+      <DependentUpon>ColorToggleButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ColorToggleButton\ColorToggleButtonBase.vb" />
+    <Compile Include="Color\HSVColor.vb" />
+    <Compile Include="Commands\CommandModel.vb" />
+    <Compile Include="Comparer\LambdaComparer.vb" />
+    <Compile Include="ControlStyle\RoundTabItem.xaml.vb">
+      <DependentUpon>RoundTabItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DirectItemsControl\DirectDataTemplateSelector.vb" />
+    <Compile Include="DirectItemsControl\DirectItemsControl.vb" />
+    <Compile Include="DirectItemsControl\DirectItemsPresenter.vb" />
+    <Compile Include="DirectItemsControl\ItemGenerator.vb" />
+    <Compile Include="Downloader\DataDownloader.vb" />
+    <Compile Include="Downloader\DownloadProgressImage.xaml.vb">
+      <DependentUpon>DownloadProgressImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Downloader\DownloadProgressImageBase.vb" />
+    <Compile Include="Downloader\ImageSourceConverter.vb" />
+    <Compile Include="EnumEditor\BriefComboBox.xaml.vb">
+      <DependentUpon>BriefComboBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EnumEditor\BriefComboBoxBase.vb" />
+    <Compile Include="EnumEditor\EnumEditor.xaml.vb">
+      <DependentUpon>EnumEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EnumEditor\Resizer.xaml.vb">
+      <DependentUpon>Resizer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EnumEditor\WrapperObject.vb" />
+    <Compile Include="EventBinding\EventBindingExtension.vb" />
+    <Compile Include="EventBinding\EventSetExtension.vb" />
+    <Compile Include="EnumEditor\EnumEditorBase.vb" />
+    <Compile Include="Expander\Expander.xaml.vb">
+      <DependentUpon>Expander.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Expander\ExpanderBase.vb" />
+    <Compile Include="Extensions\InstanceExtension.vb" />
+    <Compile Include="GridPanel\GridPanel.vb" />
+    <Compile Include="ImageViewer\ImageUtil.vb" />
+    <Compile Include="ImageViewer\ImageView.xaml.vb">
+      <DependentUpon>ImageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EventDictator\Dictator.vb" />
+    <Compile Include="MultipleItemsControl\ItemsSourceProvider.vb" />
+    <Compile Include="MultipleItemsControl\MultipleCanvasItemsControl.xaml.vb">
+      <DependentUpon>MultipleCanvasItemsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MultipleItemsControl\MultipleItemsControl.vb" />
+    <Compile Include="MultipleWordBox\ClosableItemPresenter.xaml.vb">
+      <DependentUpon>ClosableItemPresenter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MultipleWordBox\ClosableItemPresenterBase.vb" />
+    <Compile Include="MultipleWordBox\ItemBoxBase.vb" />
+    <Compile Include="MultipleWordBox\MultipleItemBox.xaml.vb">
+      <DependentUpon>MultipleItemBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MultipleWordBox\MultipleItemBoxBase.vb" />
+    <Compile Include="MultipleWordBox\MultipleWordBoxBase.vb" />
+    <Compile Include="OffsetPlot\ActivePlotBase.vb" />
+    <Compile Include="OffsetPlot\PlotBase.vb" />
+    <Compile Include="OffsetPlot\PlotOrigin.vb" />
+    <Compile Include="PostFacilities\PostFacilities.vb" />
+    <Compile Include="PrintDocument\PageSettings.vb" />
+    <Compile Include="PrintDocument\VisualPage.xaml.vb">
+      <DependentUpon>VisualPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrintDocument\VisualPaginator.vb" />
+    <Compile Include="PrintDocument\PrintPreviewDialog.xaml.vb">
+      <DependentUpon>PrintPreviewDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressNode\ProgressNode.xaml.vb">
+      <DependentUpon>ProgressNode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressNode\ProgressNodeBase.vb" />
+    <Compile Include="RootBinding\XAMLRootExtension.vb" />
+    <Compile Include="SettingUtilities\SettingUtil.vb" />
+    <Compile Include="SmartUI\AutoCompletePopup.vb" />
+    <Compile Include="SmartUI\DropDownSuggestion.vb" />
+    <Compile Include="SmartUI\MultipleValueBox.xaml.vb">
+      <DependentUpon>MultipleValueBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SmartUI\MultipleValueBoxBase.vb" />
+    <Compile Include="TabControl\ClosableTabControl.vb" />
+    <Compile Include="TabControl\ClosableTabItem.xaml.vb">
+      <DependentUpon>ClosableTabItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabControl\ClosableTabItemBase.vb" />
+    <Compile Include="Buttons\CloseButton.xaml.vb">
+      <DependentUpon>CloseButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditableLabel\EditableLabel.xaml.vb">
+      <DependentUpon>EditableLabel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditableLabel\EditableLabelBase.vb" />
+    <Compile Include="ItemsContainerControl.vb" />
+    <Compile Include="ControlAutomation\TabRibbonButton.vb" />
+    <Compile Include="TextBox\BriefTextBox.vb" />
+    <Compile Include="TextBox\CodeExpresser.xaml.vb">
+      <DependentUpon>CodeExpresser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TextBox\CodeExpresserBase.vb" />
+    <Compile Include="TextBox\FreezableTextBox.vb" />
+    <Compile Include="TextBox\LabelTextBox.xaml.vb">
+      <DependentUpon>LabelTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TextBox\LabelTextBoxBase.vb" />
+    <Compile Include="TextBox\NumberBox.vb" />
+    <Compile Include="ToggleButton\CheckTick.xaml.vb">
+      <DependentUpon>CheckTick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToggleButton\TickBox.xaml.vb">
+      <DependentUpon>TickBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToggleButton\TickBoxBase.vb" />
+    <Compile Include="ToggleButton\TickToggleButton.xaml.vb">
+      <DependentUpon>TickToggleButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TreeHelper.vb" />
+    <Compile Include="TypeTemplateSelector.vb" />
+    <Compile Include="VirtualWrapPanel\VirtualWrapPanel.vb" />
+    <Compile Include="VisualControl\AllocationViewModel.vb" />
+    <Compile Include="VisualControl\AllocationViewModelCollection.vb" />
+    <Compile Include="VisualControl\FormatedTextViewModel.vb" />
+    <Compile Include="VisualControl\GeometryAllocator.vb" />
+    <Compile Include="VisualControl\GeometryContainer.vb" />
+    <Compile Include="VisualControl\GeometryTextViewModel.vb" />
+    <Compile Include="VisualControl\GeometryViewModel.vb" />
+    <Compile Include="VisualControl\IncludableElement.vb" />
+    <Compile Include="VisualControl\IncludableElementSelector.vb" />
+    <Compile Include="VisualControl\IncludableFormatedText.vb" />
+    <Compile Include="VisualControl\IncludableLine.vb" />
+    <Compile Include="VisualControl\IncludableShape.vb" />
+    <Compile Include="VisualControl\IncludableText.vb" />
+    <Compile Include="VisualControl\IncludableTriangle.vb" />
+    <Compile Include="VisualControl\LineViewModel.vb" />
+    <Compile Include="VisualControl\VisualContainerPanel.vb" />
+    <Compile Include="VisualControl\VisualControl.vb" />
+    <Compile Include="VisualObjectModel\AllocationObjectModel.vb" />
+    <Compile Include="VisualObjectModel\FormatedMultipleTextObjectModel.vb" />
+    <Compile Include="VisualObjectModel\FormatedTextObjectModel.vb" />
+    <Compile Include="VisualObjectModel\GeometryObjectModel.vb" />
+    <Compile Include="VisualObjectModel\GeometryTextObjectModel.vb" />
+    <Compile Include="VisualObjectModel\LineObjectModel.vb" />
+    <Compile Include="VisualObjectModel\ObjectAllocator.vb" />
+    <Compile Include="VisualObjectModel\ObjectContainer.vb" />
+    <Compile Include="VisualObjectModel\VisualObjectControl.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="System.Threading.Tasks" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows" />
+    <Import Include="System.Windows.Controls" />
+    <Import Include="System.Windows.Data" />
+    <Import Include="System.Windows.Documents" />
+    <Import Include="System.Windows.Input" />
+    <Import Include="System.Windows.Shapes" />
+    <Import Include="System.Windows.Media" />
+    <Import Include="System.Windows.Media.Imaging" />
+    <Import Include="System.Windows.Navigation" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <None Include="DullahanKey.pfx" />
+    <None Include="Errisy.pfx" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <AppDesigner Include="My Project\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Buttons\AddButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Buttons\BriefButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Buttons\CircleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Buttons\ExpanderButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Buttons\RemoveButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CanvasForm\CanvasFormStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CanvasForm\TestTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CanvasItemsControl\CanvasItemsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CanvasItemsControl\DirectCanvasItemsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ColorToggleButton\ColorToggleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ControlStyle\RoundTabItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Downloader\DownloadProgressImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EnumEditor\BriefComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EnumEditor\EnumEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EnumEditor\Resizer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Expander\Expander.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImageViewer\ImageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MultipleItemsControl\MultipleCanvasItemsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MultipleWordBox\ClosableItemPresenter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MultipleWordBox\MultipleItemBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrintDocument\PrintPreviewDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PrintDocument\VisualPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProgressNode\ProgressNode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SmartUI\MultipleValueBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TabControl\ClosableTabItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Buttons\CloseButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditableLabel\EditableLabel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TextBox\CodeExpresser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TextBox\LabelTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToggleButton\CheckTick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToggleButton\TickBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToggleButton\TickToggleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Images\" />
+    <Folder Include="MultipleSelector\" />
+    <Folder Include="RibbonCheckButton\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

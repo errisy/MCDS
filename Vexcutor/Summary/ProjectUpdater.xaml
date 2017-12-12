@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="ProjectUpdater"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:my="clr-namespace:MCDS"
+             mc:Ignorable="d" 
+             d:DesignHeight="251" d:DesignWidth="832">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="42" />
+            <RowDefinition Height="36" />
+            <RowDefinition Height="231*" />
+            <RowDefinition Height="24" />
+            <RowDefinition Height="24" />
+        </Grid.RowDefinitions>
+        <my:EdgeLabel HorizontalAlignment="Center" VerticalAlignment="Top" Stroke="Black" FontWeight="Bold" FontSize="34">
+            <my:EdgeLabel.Fill>
+                <LinearGradientBrush>
+                    <GradientStop Color="YellowGreen" Offset="0"/>
+                    <GradientStop Color="GreenYellow" Offset="0.124"/>
+                    <GradientStop Color="Cyan" Offset="0.618"/>
+                    <GradientStop Color="BlueViolet" Offset="1"/>
+                </LinearGradientBrush>
+            </my:EdgeLabel.Fill>
+            <my:EdgeLabel.Effect>
+                <DropShadowEffect Opacity="0.4" Color="Blue"/>
+            </my:EdgeLabel.Effect> Synthenome Project Management
+        </my:EdgeLabel>
+        <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontSize="22" VerticalAlignment="Center" Foreground="Red">Project ID:<Run /></TextBlock>
+        <TextBlock Grid.Row="2" Name="tbInformation" FontFamily="Calibri" TextWrapping="Wrap" FontSize="18" Padding="12" Foreground="#FF4E4E4E" HorizontalAlignment="Center">
+            <TextBlock.Effect>
+                <DropShadowEffect Opacity="0.2" />
+            </TextBlock.Effect>
+            <Run Name="rnProjectStatus">Service partners: You can send updates to customers here.</Run>
+        </TextBlock>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="AUTO"/>
+                <ColumnDefinition Width="AUTO"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="AUTO"/>
+                <ColumnDefinition Width="AUTO"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Name="btnAbort" HorizontalAlignment="Right" Click="Abort"  Background="#FFEECD3C" FontSize="16" FontWeight="Bold" Width="72"
+                Foreground="RoyalBlue">
+                <my:EdgeLabel x:Name="elAbort" Stroke="Purple" FontFamily="Arial">Abort</my:EdgeLabel>
+            </Button>
+            <Button Grid.Column="1" Name="btnModify" HorizontalAlignment="Right" Click="Modify"  Background="#FFC9FBCB" FontSize="16" FontWeight="Bold" Width="72"
+                Foreground="RoyalBlue">
+                <my:EdgeLabel x:Name="elModify" Stroke="#FFFD1071" FontFamily="Arial">Modify</my:EdgeLabel>
+            </Button>
+            <Button Grid.Column="3" Name="btnRefresh" HorizontalAlignment="Right" Click="Refresh"  Background="White" FontSize="16" FontWeight="Bold" Width="72"
+                Foreground="RoyalBlue">
+                <my:EdgeLabel x:Name="elRefresh" Stroke="#FF05BF62" FontFamily="Arial">Refresh</my:EdgeLabel>
+            </Button>
+            <Button Grid.Column="4" Name="btnAccept" HorizontalAlignment="Right" Click="Accept"  Background="#FFF1F5C3" FontSize="16" FontWeight="Bold" Width="72"
+                Foreground="RoyalBlue">
+                <my:EdgeLabel x:Name="elAccept" Stroke="#FF0AA08C" FontFamily="Arial">Accept</my:EdgeLabel>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="AUTO"/>
+                <ColumnDefinition Width="AUTO"/>
+            </Grid.ColumnDefinitions>
+            <Label Name="lbInfo" Padding="3"  Content="Click the button on the right to update your progress to customer." />
+            <Button Grid.Column="1" Click="ModifyProgress"  Background="LightYellow" FontSize="16" FontWeight="Bold"
+                Foreground="RoyalBlue">
+                <my:EdgeLabel Stroke="RoyalBlue" FontFamily="Arial">Modify Project</my:EdgeLabel>
+            </Button>
+            <Button Grid.Column="2" Click="UpdateProgress"  Background="LightYellow" FontSize="16" FontWeight="Bold"
+                Foreground="RoyalBlue">
+                <my:EdgeLabel Stroke="RoyalBlue" FontFamily="Arial">Update Progress</my:EdgeLabel>
+            </Button>
+            <Button Grid.Column="2" Visibility="Hidden" Click="ConfirmProgress"  Background="LightYellow" FontSize="16" FontWeight="Bold"
+                Foreground="RoyalBlue">
+                <my:EdgeLabel Stroke="RoyalBlue" FontFamily="Arial">Confirm Progress</my:EdgeLabel>
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

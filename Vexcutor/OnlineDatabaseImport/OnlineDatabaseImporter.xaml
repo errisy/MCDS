@@ -1,0 +1,176 @@
+﻿<UserControl x:Class="OnlineDatabaseImporter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:v="clr-namespace:MCDS"
+             xmlns:e="clr-namespace:Errisy;assembly=Errisy"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <TabControl>
+            <TabItem Name="tiNCBI" DataContext="{Binding NCBI}">
+                <TabItem.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Width="24" Height="24" Source="pack://application:,,,/Images/NCBI.png"/>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" FontSize="18">
+                            NCBI
+                        </TextBlock>
+                    </Grid>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" VerticalAlignment="Center">Keywords:</TextBlock>
+                        <TextBox Grid.Column="1" Text="{Binding Keywords, UpdateSourceTrigger=PropertyChanged}" v:EventCommand.KeyDownCommand="{Binding Search}" />
+                        <Button Grid.Column="2" Content="Search" Command="{Binding Search}"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" VerticalAlignment="Center">Return Number:</TextBlock>
+                        <TextBox Grid.Column="1" Text="{Binding Number}"/>
+                    </Grid>
+
+                </Grid>
+            </TabItem>
+            <TabItem Name="tiKEGG" DataContext="{Binding KEGG}">
+                <TabItem.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Width="24" Height="24" Source="pack://application:,,,/Images/KEGG.png"/>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" FontSize="18">
+                            KEGG
+                        </TextBlock>
+                    </Grid>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" VerticalAlignment="Center">Keywords:</TextBlock>
+                        <TextBox Grid.Column="1" Text="{Binding Keywords, UpdateSourceTrigger=PropertyChanged}" v:EventCommand.KeyDownCommand="{Binding Search}" />
+                        <Button Grid.Column="2" Content="Search" Command="{Binding Search}"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="40*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" VerticalAlignment="Center">Organism Key:</TextBlock>
+                        <TextBox Grid.Column="1" Text="{Binding OrganismKey, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Column="2" VerticalAlignment="Center">Organism Name Search:</TextBlock>
+                        <TextBox Grid.Column="3" Text="{Binding NameKeywords, UpdateSourceTrigger=PropertyChanged}" v:EventCommand.KeyDownCommand="{Binding SearchName}"/>
+                        <Button Grid.Column="4" Content="Search Organism" Command="{Binding SearchName}"/>
+                    </Grid>
+                    <DataGrid Grid.Row="2" IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding OrganismIDs}">
+                        <DataGrid.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="LightYellow" />
+                                        <Setter Property="Foreground" Value="Black" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.CellStyle>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
+                            <DataGridTemplateColumn Header="Select">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="Select" Command="{Binding SelectID}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <DataGrid AutoGenerateColumns="False" Grid.Row="1" ItemsSource="{Binding Entries}" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False">
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="LightYellow" />
+                            <Setter Property="Foreground" Value="Black" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.CellStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Database" Binding="{Binding Database}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Length" Binding="{Binding Length}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Descriptoin" Binding="{Binding Description}" IsReadOnly="True"/>
+                <DataGridTemplateColumn Header="Access Online">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Access Online Entry" Command="{Binding AccessOnline}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Selected">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <e:TickBox Height="20" IsChecked="{Binding Selected}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" MinWidth="120"/>
+                    <ColumnDefinition Width="Auto" MinWidth="120"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"><Run Text="{Binding DownloadStatus, Mode=OneWay}"/></TextBlock>
+                <TextBlock Grid.Column="1" DataContext="{Binding Downloader, Mode=OneWay}"><Run Text="{Binding Count, Mode=OneWay}"/> / <Run Text="{Binding Total, Mode=OneWay}"/></TextBlock>
+                <Button Grid.Column="3" Content="Obtain Selected" Command="{Binding Obtain}"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,23 @@
+﻿<Grid x:Class="AdvertismentEntry"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="clr-namespace:System.Windows.Controls.Primitives;assembly=PresentationFramework"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="200">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="24"/>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="AUTO"/>
+        <RowDefinition Height="AUTO"/>
+    </Grid.RowDefinitions>
+    <p:ToggleButton Grid.Row="0" Content="{Binding Name}" Padding="2" Foreground="DarkRed" FontWeight="Bold" Background="Transparent" IsChecked="{Binding IsSelected}"/>
+    <TextBlock Grid.Row="1" x:Name="adContent" Text="{Binding BusinessScope}"/>
+    <TextBlock Grid.Row="2">
+        <Run>Tel: </Run><Run x:Name="adTel" Text="{Binding Telephone}"/> <Run>Email: </Run><Run x:Name="adEmail" Text="{Binding Email}"/>
+    </TextBlock>
+    <TextBlock Grid.Row="3">
+        <Underline Foreground="Blue"><Run x:Name="adLink" MouseDown="Navigate" Text="{Binding WebAddress}"/></Underline>
+    </TextBlock>
+</Grid>

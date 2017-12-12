@@ -1,0 +1,3 @@
+﻿Class CloseButton
+
+End Class

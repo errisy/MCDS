@@ -1,0 +1,21 @@
+USA:
+New England(Maine, New Hampshire, Vermont, Massachusetts, Rhode Island, and Connecticut)
+Middle Atlantic(Delaware, Maryland, New Jersey, Pennsylvania, Washington D.C., New York, Virginia, and West Virginia)
+East North Central States(Illinois, Indiana, Michigan, Ohio, and Wisconsin)
+West North Central States(Iowa, Kansas, Minnesota, Missouri, Nebraska, North Dakota and South Dakota)
+Pacific States(Alaska, California, Hawaii, Oregon, Washington)
+Mountain States(Arizona, Colorado, Idaho, Montana, Nevada, New Mexico, Utah, and Wyoming)
+West South Central States(Arkansas, Louisiana, Oklahoma, and Texas)
+East South Central States(Alabama, Kentucky, Mississippi, and Tennessee)
+South Atlantic States(Delaware, Florida, Georgia, Maryland, North Carolina, South Carolina, Virginia, West Virginia, and the District of Columbia)
+
+Russia:
+Central Federal District(Belgorod Oblast, Bryansk Oblast, Vladimir Oblast, Voronezh Oblast, Ivanovo Oblast, Kaluga Oblast, Kostroma Oblast, Kursk Oblast, Lipetsk Oblast, Moscow, Moscow Oblast, Oryol Oblast, Ryazan Oblast, Smolensk Oblast, Tambov Oblast, Tver Oblast, Tula Oblast, Yaroslavl Oblast)
+Southern Federal District(Republic of Adygea, Astrakhan Oblast, Volgograd Oblast, Republic of Kalmykia, Krasnodar Krai, Rostov Oblast)
+Northwestern Federal District(Arkhangelsk, Vologda, Kaliningrad, Republic of Karelia, Komi Republic, Leningrad Oblast, Murmansk Oblast, Nenets Autonomous Okrug, Novgorod Oblast, Pskov Oblast and Saint Petersburg)
+Far Eastern Federal District(Amur Oblast, Jewish Autonomous Oblast, Kamchatka Krai, Magadan Oblast, Primorsky Krai, Sakha Republic, Sakhalin Oblast, Khabarovsk Krai, Chukotka Autonomous Okrug)
+Siberian Federal District(Altai Republic, Altai Krai, Buryat Republic, Zabaykalsky Krai, Irkutsk Oblast, Kemerovo Oblast, Krasnoyarsk Krai, Novosibirsk Oblast, Omsk Oblast, Tomsk Oblast, Tuva Republic, Republic of Khakassia)
+Urals Federal District(Kurgan Oblast, Sverdlovsk Oblast, Tyumen Oblast, Khanty¨CMansi Autonomous Okrug, Chelyabinsk Oblast, Yamalo-Nenets Autonomous Okrug)
+Volga Federal District(Republic of Bashkortostan, Kirov Oblast, Mari El Republic, Republic of Mordovia, Nizhny Novgorod Oblast, Orenburg Oblast, Penza Oblast, Perm Krai, Samara Oblast, Saratov Oblast, Republic of Tatarstan, Udmurt Republic, Ulyanovsk Oblast, Chuvash Republic)
+North Caucasian Federal District(Republic of Dagestan, Republic of Ingushetia, Kabardino-Balkar Republic, Karachay¨CCherkess Republic, Republic of North Ossetia¨CAlania, Stavropol Krai, Chechen Republic)
+

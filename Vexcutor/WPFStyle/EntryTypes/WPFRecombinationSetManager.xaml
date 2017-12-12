@@ -1,0 +1,116 @@
+﻿<UserControl x:Class="WPFRecombinationSetManager"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:v="clr-namespace:MCDS"
+             xmlns:e="clr-namespace:Errisy;assembly=Errisy"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="800">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="32"/>
+                    <ColumnDefinition Width="32"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" Margin="2,0,2,0" FontSize="20"><Bold>Recombination Sets</Bold></TextBlock>
+                <v:NewButton Grid.Column="2" Click="AddNewSet"/>
+                <v:SaveFileButton Grid.Column="3" Click="SaveSets"/>
+                <!--<TextBlock Grid.Column="2" VerticalAlignment="Center" Margin="2,0,2,0" MouseDown="AddNewSet" Cursor="Hand"><Underline Foreground="Blue"><Bold>Add New Set</Bold></Underline></TextBlock>
+                <TextBlock Grid.Column="3" VerticalAlignment="Center" Margin="2,0,2,0" MouseDown="SaveSets" Cursor="Hand"><Underline Foreground="Blue"><Bold>Save</Bold></Underline></TextBlock>-->
+            </Grid>
+            <ListView Name="lvMain" Grid.Row="1" SelectionChanged="SetChanged">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Background="White" CornerRadius="2" BorderBrush="Green" BorderThickness="1">
+                            <TextBlock Foreground="Gray" Margin="2,0,2,0">Set: <Underline><Run Foreground="Blue" Text="{Binding Name, Mode=OneWay}"/></Underline></TextBlock>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <Grid Grid.Column="1" Background="AliceBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32"/>
+                <RowDefinition/>
+                <RowDefinition Height="32"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="32"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" Margin="2,0,2,0" FontSize="20"><Bold>Recombination Sites</Bold></TextBlock>
+                <v:NewButton Grid.Column="2" Click="AddNewSite"/>
+            </Grid>
+            <Grid Grid.Row="1" Name="gdRecombinationSetDetail">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" VerticalAlignment="Center" Margin="2,0,2,0">Name:</TextBlock>
+                    <TextBox Grid.Column="1" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+                </Grid>
+                <ListView Name="lvSet" Grid.Row="1" ItemsSource="{Binding }" SelectionChanged="SiteChanged">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Background="White" CornerRadius="2" BorderBrush="Green" BorderThickness="1">
+                                <TextBlock Foreground="Gray" Margin="2,0,2,0">
+                                    Site: <Underline><Run Foreground="Blue" Text="{Binding Name, Mode=OneWay}"/></Underline>
+                                    Type: <Run Text="{Binding RecombinationType}"/>
+                                    SCut: <Run Text="{Binding SCut}"/>
+                                    ACut: <Run Text="{Binding ACut}"/>
+                                    Sequence: <Run Text="{Binding Sequence}"/>
+                                </TextBlock>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <TextBlock Grid.Row="2" VerticalAlignment="Center" Margin="2,0,2,0" FontSize="20"><Bold>Recombination Site Detail</Bold></TextBlock>
+            <Grid Grid.Row="3" Name="gdSiteDetail">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" VerticalAlignment="Center" Margin="2,0,2,0">Name:</TextBlock>
+                    <TextBox Grid.Column="1" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                    <TextBlock Grid.Column="2" VerticalAlignment="Center" Margin="2,0,2,0">Sequence:</TextBlock>
+                    <TextBox Grid.Column="3" Text="{Binding Sequence, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                    <TextBlock Grid.Column="4" VerticalAlignment="Center" Margin="2,0,2,0">Type:</TextBlock>
+                    <ComboBox Grid.Column="5" Name="cbRecombinationType" SelectedItem="{Binding RecombinationType, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                </Grid>
+                <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                    <v:VisualPresenter x:Name="vpCutSite"/>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

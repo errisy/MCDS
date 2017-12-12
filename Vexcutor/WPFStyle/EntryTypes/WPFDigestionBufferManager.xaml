@@ -1,0 +1,141 @@
+﻿<UserControl x:Class="WPFDigestionBufferManager"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:v="clr-namespace:MCDS"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="800">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="28"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="240*" MaxWidth="240"/>
+                <ColumnDefinition Width="28"/>
+                <ColumnDefinition Width="28"/>
+                <ColumnDefinition Width="240*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="200*" MaxWidth="200"/>
+                <ColumnDefinition Width="28"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Margin="2" FontSize="18" VerticalAlignment="Center">Supplier</TextBlock>
+            <ComboBox Name="cbSuppliers" Grid.Column="1" FontSize="18" SelectionChanged="SupplierSelected">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock><Run Text="{Binding SupplierName}"/></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <v:CloseButton Grid.Column="2" ToolTip="Delete Supplier" Click="DeleteSupplier"/>
+            <v:SaveFileButton Grid.Column="3" ToolTip="Save Buffers Setting" Click="SaveSuppliers"/>
+            <TextBlock Grid.Column="5" Margin="2" FontSize="18" VerticalAlignment="Center">Add New Supplier</TextBlock>
+            <TextBox Name="tbNewSupplier" Grid.Column="6" FontSize="18"/>
+            <v:NewButton Grid.Column="7" ToolTip="Add New Supplier" Click="AddNewSupplier"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="240*" MaxWidth="240"/>
+                <ColumnDefinition Width="28"/>
+                <ColumnDefinition Width="240*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="200*" MaxWidth="200"/>
+                <ColumnDefinition Width="100*" MaxWidth="200"/>
+                <ColumnDefinition Width="28"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Margin="2" FontSize="18" VerticalAlignment="Center">Buffers</TextBlock>
+            <TextBox Name="tbBuffers" Grid.Column="1" FontSize="18"/>
+            <v:NewButton Grid.Column="2" Click="AddBuffer"/>
+            <TextBlock Grid.Column="4" Margin="2" FontSize="18" VerticalAlignment="Center">Add New Alias</TextBlock>
+            <TextBox Name="tbNewAlias" Grid.Column="5" FontSize="18"/>
+            <TextBox Name="tbEnzyme" Grid.Column="6" FontSize="18"/> 
+            <v:AutoCompletePopup x:Name="acpEnzymeList" ConnectedTextBox="{Binding ElementName=tbEnzyme}"/>
+            <v:NewButton Grid.Column="7" ToolTip="Add New Enzyme Alias Entry" Click="AddNewEnzymeAlias"/>
+        </Grid>
+        <DataGrid Grid.Row="3" Name="dgTable" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeRows="False">
+            <DataGrid.RowHeaderStyle>
+                <Style TargetType="DataGridRowHeader">
+                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                    <Setter Property="VerticalAlignment" Value="Stretch"/>
+                </Style>
+            </DataGrid.RowHeaderStyle>
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="LightYellow" />
+                            <Setter Property="Foreground" Value="Black" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.CellStyle>
+            <DataGrid.RowHeaderTemplate>
+                <DataTemplate>
+                    <v:WPFDigestionBufferRowLeader/>
+                </DataTemplate>
+            </DataGrid.RowHeaderTemplate>
+        </DataGrid>
+        <!--<Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="36"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="36"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Border BorderThickness="0.5" BorderBrush="Black" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="0" Grid.Column="0">
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16">Alias Names</TextBlock>
+                </Border>
+                <ItemsControl Name="icHeader" Grid.Column="1">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+            <ItemsControl Name="icInfos" Grid.Row="1">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="36"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Border BorderThickness="0.5" BorderBrush="Black" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="0" Grid.Column="0">
+                                <v:WPFDigestionBufferRowLeader/>
+                            </Border>
+                            <ItemsControl Grid.Column="1" ItemsSource="{Binding Items}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <v:WPFDigestionBufferItem/>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+    </Grid>-->
+        <!--<ScrollViewer Grid.Row="3">
+            <Grid Name="gdInfos">
+                <Grid.RowDefinitions>
+                    <RowDefinition Name="rdHeaderRow" Height="36"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Name="cdAliasColumn" Width="Auto" MinWidth="60"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderThickness="0.5" BorderBrush="Black" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="0" Grid.Column="0">
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16">Alias Names</TextBlock>
+                </Border>
+            </Grid>
+        </ScrollViewer>-->
+    </Grid>
+</UserControl>

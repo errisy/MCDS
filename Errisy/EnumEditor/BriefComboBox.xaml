@@ -1,0 +1,48 @@
+﻿<e:BriefComboBoxBase x:Class="BriefComboBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:e="clr-namespace:Errisy"
+             mc:Ignorable="d" 
+             d:DesignHeight="24" d:DesignWidth="300">
+    <e:BriefComboBoxBase.Template>
+        <ControlTemplate TargetType="e:BriefComboBoxBase">
+            <Grid>
+                <Border Name="PART_Label" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                    <ContentControl ContentTemplate="{TemplateBinding ValueTemplate}" Content="{TemplateBinding Value}" />
+                </Border>
+                <Popup Name="PART_Popup" StaysOpen="False" Placement="Bottom" AllowsTransparency="True" Focusable="True">
+                    <Border Background="{TemplateBinding PopupBackground}" BorderBrush="{TemplateBinding PopupBorderBrush}" 
+                            BorderThickness="{TemplateBinding PopupBorderThickness}" CornerRadius="{TemplateBinding PopupCornerRadius}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="24"/>
+                            </Grid.ColumnDefinitions>
+                            <ScrollViewer Name="PART_Scroll" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                <ItemsControl Name="PART_ItemsControl" Focusable="False" ItemsSource="{TemplateBinding ItemsSource}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="{x:Type e:EnumItem}">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="24"/>
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <e:TickToggleButton Focusable="False" Click="UpdateSelectionValue" Height="24"
+                                                                IsChecked="{Binding _IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                                <ContentControl Grid.Column="1" ContentTemplate="{Binding ItemTemplate, Source={e:XAMLRoot}}"
+                                                                Content="{Binding }"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </ScrollViewer>
+                            <e:Resizer x:Name="PART_ResizeGrip" Grid.Column="1" Width="20" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                        </Grid>
+                    </Border>
+                </Popup>
+            </Grid>
+        </ControlTemplate>
+    </e:BriefComboBoxBase.Template>
+</e:BriefComboBoxBase>

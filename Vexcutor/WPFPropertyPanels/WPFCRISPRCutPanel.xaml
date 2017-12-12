@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="WPFCRISPRCutPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MCDS"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="16" FontFamily="Arial"><Run Text="{Binding Suggestion, Mode=OneWay}"/></TextBlock>
+        <ItemsControl ItemsSource="{Binding Source}" Grid.Row="1">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <CheckBox IsChecked="{Binding IssgRNA}">
+                        <CheckBox.Content>
+                            <TextBlock VerticalAlignment="Center"><Run Foreground="Black" Text="{Binding Name, Mode=OneWay}"/> (<Run Foreground="Blue" Text="{Binding Length, Mode=OneWay}"/>bp)</TextBlock>
+                        </CheckBox.Content>
+                    </CheckBox>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</UserControl>

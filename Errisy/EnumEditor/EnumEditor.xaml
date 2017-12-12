@@ -1,0 +1,40 @@
+﻿<e:EnumEditorBase x:Class="EnumEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:e="clr-namespace:Errisy"
+             mc:Ignorable="d" 
+             d:DesignHeight="24" d:DesignWidth="300">
+    <e:EnumEditorBase.Template>
+        <ControlTemplate TargetType="e:EnumEditorBase">
+            <Grid>
+                <Border Name="PART_Label" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                    <TextBlock VerticalAlignment="Center"><Run Text="{TemplateBinding Label}"/></TextBlock>
+                </Border>
+                <Popup Name="PART_Popup" StaysOpen="False" Placement="Bottom" AllowsTransparency="True" Focusable="True">
+                    <Border Background="{TemplateBinding PopupBackground}" BorderBrush="{TemplateBinding PopupBorderBrush}" 
+                            BorderThickness="{TemplateBinding PopupBorderThickness}" CornerRadius="{TemplateBinding PopupCornerRadius}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="24"/>
+                            </Grid.ColumnDefinitions>
+                            <ScrollViewer Name="PART_Scroll" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                <ItemsControl Name="PART_ItemsControl" Focusable="False">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="{x:Type e:EnumItem}">
+                                            <e:TickToggleButton Focusable="False" Click="UpdateEnumValue" Height="24" Content="{Binding Name}" 
+                                                                IsChecked="{Binding IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </ScrollViewer>
+                            <e:Resizer x:Name="PART_ResizeGrip" Grid.Column="1" Width="20" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                        </Grid>
+                    </Border>
+                </Popup>
+            </Grid>
+        </ControlTemplate>
+    </e:EnumEditorBase.Template>
+</e:EnumEditorBase>

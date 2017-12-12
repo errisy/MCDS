@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="GeneSynthesisPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:my="clr-namespace:MCDS"
+             mc:Ignorable="d" 
+             d:DesignHeight="378" d:DesignWidth="745">
+ 
+ 
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="36" />
+                <RowDefinition Height="295*" />
+            </Grid.RowDefinitions>
+            <my:EdgeLabel VerticalAlignment="Center" HorizontalAlignment="Center" Stroke="Gray" Fill="Red" FontSize="28">
+                <my:EdgeLabel.Effect>
+                    <DropShadowEffect Opacity="0.4" />
+                </my:EdgeLabel.Effect>
+                Synthenome Gene Synthesis Service</my:EdgeLabel>
+            <Grid Grid.Row="1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="96" />
+                    <RowDefinition Height="32" />
+                    <RowDefinition Height="210*" />
+                    <RowDefinition Height="24" />
+                </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Name="gdPriceInfo">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32" />
+                    <RowDefinition Height="64" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" VerticalAlignment="Center" FontSize="18">
+                    Gene Synthesis from US$<Run Foreground="Blue" Text="{Binding WorldWidePrice}"></Run>/bp, and Cloned in Vector.
+                </TextBlock>
+                <TextBlock Grid.Row="1" Padding="4,0,0,0" Foreground="Gray">
+                Worldwide order will be distributed via Air Express.<LineBreak/>
+                Synthesized DNA are cloned in pUC or p15a based vectors.<LineBreak/>
+                Customized subclonings will be charged at US$<Run Text="{Binding SynthesisSubClonePrice}"/>/subcloning.<LineBreak/>
+                For clients in China Mainland, the price is <Run Text="{Binding ChinaPrice}" Foreground="Blue"></Run> RMB/bp due to additional tax.
+                </TextBlock>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="AUTO" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="AUTO" />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="128" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" HorizontalAlignment="Right" Padding="2" VerticalAlignment="Center" FontSize="14">Total Basepairs:</Label>
+                <TextBlock Grid.Column="1" HorizontalAlignment="Right" Padding="2" VerticalAlignment="Center" FontSize="14" Foreground="Blue" FontWeight="Bold">
+                            <Run Text="{Binding TotalLength, UpdateSourceTrigger=PropertyChanged}"></Run>bp</TextBlock>
+                <Label Grid.Column="2" HorizontalAlignment="Right" Padding="2" VerticalAlignment="Center" FontSize="14">Total Price:</Label>
+                <TextBlock Grid.Column="3" HorizontalAlignment="Right" Padding="2" VerticalAlignment="Center" FontSize="14" Foreground="Blue" FontWeight="Bold">
+                    US$<Run Text="{Binding TotalPrice, UpdateSourceTrigger=PropertyChanged}"></Run></TextBlock>
+                <Button Background="Transparent" Click="OrderNow"  HorizontalAlignment="Right" Grid.Column="5" FontSize="16" Foreground="Blue" FontWeight="Bold">
+                    <my:EdgeLabel VerticalAlignment="Center" HorizontalAlignment="Center" Stroke="Gold" Fill="Red" FontSize="24">
+                        <my:EdgeLabel.Effect>
+                            <DropShadowEffect Opacity="0.4" />
+                        </my:EdgeLabel.Effect>
+                        Order Now
+                    </my:EdgeLabel>
+                </Button>
+            </Grid>
+            <FrameworkElement Name="Vectors"/>
+            <DataGrid Grid.Row="2" Background="White" ItemsSource="{Binding DNAList}" AutoGenerateColumns="False" CanUserAddRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="DNA ID" Width="120" Binding="{Binding DNAID}" IsReadOnly="False"/>
+                    <DataGridTextColumn Header="Length" Width="80" Binding="{Binding Length}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Sequence" Width="1*" Binding="{Binding Sequence}" IsReadOnly="True"/>
+                    <DataGridTemplateColumn Header="Cloning Vector" Width="80">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ComboBox SelectionChanged="ValidCheckChanged" HorizontalAlignment="Stretch" ItemsSource="{Binding ElementName=Vectors, Path=Tag}"
+                                          SelectedItem="{Binding Vector, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Price" Width="80" Binding="{Binding Price}" IsReadOnly="True"/>
+                    <DataGridTemplateColumn Header="Valid" Width="80">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox Checked="ValidCheckChanged" HorizontalAlignment="Center"  Unchecked="ValidCheckChanged" IsChecked="{Binding Valid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Label Name="lbInfo"  Grid.Row="3" Content="DNA Synthesis." />
+        </Grid>
+            
+     </Grid>
+</UserControl>
