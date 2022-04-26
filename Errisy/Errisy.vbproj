@@ -8,7 +8,7 @@
     <RootNamespace>Errisy</RootNamespace>
     <AssemblyName>Errisy</AssemblyName>
     <OutputType>Library</OutputType>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <MyType>Custom</MyType>
     <ProjectGuid>{AF8B57A7-D2DA-4917-A169-89701351612F}</ProjectGuid>
   </PropertyGroup>
@@ -52,7 +52,6 @@
     <AssemblyOriginatorKeyFile>DullahanKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Expression.Effects, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Controls.Ribbon" />
@@ -294,6 +293,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <AppDesigner Include="My Project\" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Buttons\AddButton.xaml">

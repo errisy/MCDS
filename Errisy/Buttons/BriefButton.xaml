@@ -3,29 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:ef="http://schemas.microsoft.com/expression/2010/effects"
+             xmlns:ef="Microsoft.Expression.Effects"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="300"
+        >
     <Button.Template>
         <ControlTemplate TargetType="Button">
             <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
                 <ContentPresenter Name="_Content" ContentSource="Content">
-                    <ContentPresenter.Effect>
+                    <!--<ContentPresenter.Effect>
                         <ef:ColorToneEffect ToneAmount="0.2" DarkColor="Black" LightColor="White"/>
-                    </ContentPresenter.Effect>
+                    </ContentPresenter.Effect>-->
                 </ContentPresenter>
             </Border>
             <ControlTemplate.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter TargetName="_Content" Property="Effect" Value="{x:Null}"/>
                 </Trigger>
-                <Trigger Property="IsPressed" Value="True">
+                <!--<Trigger Property="IsPressed" Value="True">
                     <Setter TargetName="_Content" Property="Effect">
                         <Setter.Value>
                             <ef:BloomEffect BloomIntensity="0.2"/>
                         </Setter.Value>
                     </Setter>
-                </Trigger>
+                </Trigger>-->
             </ControlTemplate.Triggers>
         </ControlTemplate>
     </Button.Template>

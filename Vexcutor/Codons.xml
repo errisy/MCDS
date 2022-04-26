@@ -1,0 +1,505 @@
+<Translation Organism="eco" xmlns="clr-namespace:MCDS.KEGG;assembly=MCDS" xmlns:m="clr-namespace:MCDS;assembly=MCDS" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Translation.AminoTable>
+    <m:AminoAcid x:Key="^" Name="Ini" ShortName="^">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage AminoAcid="^" IsStartCodon="True" Ratio="0.90500362581580851" StartRatio="0.90500362581580851">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="ATG" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage AminoAcid="^" IsStartCodon="True" Ratio="0.076867295141406819" StartRatio="0.076867295141406819">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="GTG" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage AminoAcid="^" IsStartCodon="True" Ratio="0.017162194827169446" StartRatio="0.017162194827169446">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="TTG" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage AminoAcid="^" IsStartCodon="True" Ratio="0.00048344210780759005" StartRatio="0.00048344210780759005">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="ATT" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage AminoAcid="^" IsStartCodon="True" Ratio="0.00048344210780759005" StartRatio="0.00048344210780759005">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="CTG" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="A" Name="Ala" ShortName="A">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID0" AminoAcid="A" IsStartCodon="False" Ratio="0.35816527260223585" StartRatio="0.35816527260223585">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="GCG" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID1" AminoAcid="A" IsStartCodon="False" Ratio="0.21183648663777249" StartRatio="0.21183648663777249">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="GCA" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID2" AminoAcid="A" IsStartCodon="False" Ratio="0.27039518927823181" StartRatio="0.27039518927823181">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="GCC" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID3" AminoAcid="A" IsStartCodon="False" Ratio="0.15960305148175988" StartRatio="0.15960305148175988">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="GCT" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="R" Name="Arg" ShortName="R">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID4" AminoAcid="R" IsStartCodon="False" Ratio="0.404060647105165" StartRatio="0.404060647105165">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="CGC" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID5" AminoAcid="R" IsStartCodon="False" Ratio="0.06245767279864" StartRatio="0.06245767279864">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="CGA" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID6" AminoAcid="R" IsStartCodon="False" Ratio="0.38386798059513771" StartRatio="0.38386798059513771">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="CGT" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID7" AminoAcid="R" IsStartCodon="False" Ratio="0.018824374939532571" StartRatio="0.018824374939532571">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="AGG" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID8" AminoAcid="R" IsStartCodon="False" Ratio="0.096457645156386052" StartRatio="0.096457645156386052">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="CGG" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID9" AminoAcid="R" IsStartCodon="False" Ratio="0.0343316794051387" StartRatio="0.0343316794051387">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="AGA" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="N" Name="Asn" ShortName="N">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID10" AminoAcid="N" IsStartCodon="False" Ratio="0.5535931790499391" StartRatio="0.5535931790499391">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="AAC" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID11" AminoAcid="N" IsStartCodon="False" Ratio="0.4464068209500609" StartRatio="0.4464068209500609">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="AAT" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="D" Name="Asp" ShortName="D">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID12" AminoAcid="D" IsStartCodon="False" Ratio="0.62570688731472113" StartRatio="0.62570688731472113">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="GAT" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID13" AminoAcid="D" IsStartCodon="False" Ratio="0.37429311268527887" StartRatio="0.37429311268527887">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="GAC" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="C" Name="Cys" ShortName="C">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID14" AminoAcid="C" IsStartCodon="False" Ratio="0.558196342510068" StartRatio="0.558196342510068">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="TGC" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID15" AminoAcid="C" IsStartCodon="False" Ratio="0.441803657489932" StartRatio="0.441803657489932">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="TGT" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="E" Name="Glu" ShortName="E">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID16" AminoAcid="E" IsStartCodon="False" Ratio="0.69067897479302776" StartRatio="0.69067897479302776">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="GAA" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID17" AminoAcid="E" IsStartCodon="False" Ratio="0.30932102520697224" StartRatio="0.30932102520697224">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="GAG" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="Q" Name="Gln" ShortName="Q">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID18" AminoAcid="Q" IsStartCodon="False" Ratio="0.65353181552831285" StartRatio="0.65353181552831285">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="CAG" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID19" AminoAcid="Q" IsStartCodon="False" Ratio="0.34646818447168709" StartRatio="0.34646818447168709">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="CAA" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="G" Name="Gly" ShortName="G">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID20" AminoAcid="G" IsStartCodon="False" Ratio="0.337473046939791" StartRatio="0.337473046939791">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="GGT" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID21" AminoAcid="G" IsStartCodon="False" Ratio="0.40699120915574721" StartRatio="0.40699120915574721">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="GGC" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID22" AminoAcid="G" IsStartCodon="False" Ratio="0.14971388289931994" StartRatio="0.14971388289931994">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="GGG" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID23" AminoAcid="G" IsStartCodon="False" Ratio="0.10582186100514182" StartRatio="0.10582186100514182">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="GGA" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="H" Name="His" ShortName="H">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID24" AminoAcid="H" IsStartCodon="False" Ratio="0.43016439832906617" StartRatio="0.43016439832906617">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="CAC" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID25" AminoAcid="H" IsStartCodon="False" Ratio="0.56983560167093383" StartRatio="0.56983560167093383">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="CAT" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="I" Name="Ile" ShortName="I">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID26" AminoAcid="I" IsStartCodon="False" Ratio="0.50966266437964547" StartRatio="0.50966266437964547">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="ATT" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID27" AminoAcid="I" IsStartCodon="False" Ratio="0.42243821866463377" StartRatio="0.42243821866463377">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="ATC" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID28" AminoAcid="I" IsStartCodon="False" Ratio="0.067899116955720734" StartRatio="0.067899116955720734">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="ATA" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="L" Name="Leu" ShortName="L">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID29" AminoAcid="L" IsStartCodon="False" Ratio="0.12750554015633572" StartRatio="0.12750554015633572">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="TTG" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID30" AminoAcid="L" IsStartCodon="False" Ratio="0.50042397337874722" StartRatio="0.50042397337874722">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="CTG" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID31" AminoAcid="L" IsStartCodon="False" Ratio="0.10458960089497574" StartRatio="0.10458960089497574">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="CTC" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID32" AminoAcid="L" IsStartCodon="False" Ratio="0.12879527430008764" StartRatio="0.12879527430008764">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="TTA" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID33" AminoAcid="L" IsStartCodon="False" Ratio="0.10255167843578764" StartRatio="0.10255167843578764">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="CTT" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID34" AminoAcid="L" IsStartCodon="False" Ratio="0.036133932834066081" StartRatio="0.036133932834066081">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="CTA" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="K" Name="Lys" ShortName="K">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID35" AminoAcid="K" IsStartCodon="False" Ratio="0.76797618840403126" StartRatio="0.76797618840403126">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="AAA" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID36" AminoAcid="K" IsStartCodon="False" Ratio="0.23202381159596874" StartRatio="0.23202381159596874">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="AAG" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="M" Name="Met" ShortName="M">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID37" AminoAcid="M" IsStartCodon="False" Ratio="1" StartRatio="1">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="ATG" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="F" Name="Phe" ShortName="F">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID38" AminoAcid="F" IsStartCodon="False" Ratio="0.42649393410814729" StartRatio="0.42649393410814729">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="TTC" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID39" AminoAcid="F" IsStartCodon="False" Ratio="0.57350606589185271" StartRatio="0.57350606589185271">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="TTT" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="P" Name="Pro" ShortName="P">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID40" AminoAcid="P" IsStartCodon="False" Ratio="0.12259884090870006" StartRatio="0.12259884090870006">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="CCC" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID41" AminoAcid="P" IsStartCodon="False" Ratio="0.5308947703313901" StartRatio="0.5308947703313901">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="CCG" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID42" AminoAcid="P" IsStartCodon="False" Ratio="0.15680407229703006" StartRatio="0.15680407229703006">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="CCT" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID43" AminoAcid="P" IsStartCodon="False" Ratio="0.18970231646287986" StartRatio="0.18970231646287986">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="CCA" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="S" Name="Ser" ShortName="S">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID44" AminoAcid="S" IsStartCodon="False" Ratio="0.27927581914020078" StartRatio="0.27927581914020078">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="AGC" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID45" AminoAcid="S" IsStartCodon="False" Ratio="0.12108971472465764" StartRatio="0.12108971472465764">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="TCA" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID46" AminoAcid="S" IsStartCodon="False" Ratio="0.14516727147511457" StartRatio="0.14516727147511457">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="TCT" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID47" AminoAcid="S" IsStartCodon="False" Ratio="0.14977617672767726" StartRatio="0.14977617672767726">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="AGT" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID48" AminoAcid="S" IsStartCodon="False" Ratio="0.15523269673933196" StartRatio="0.15523269673933196">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="TCG" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID49" AminoAcid="S" IsStartCodon="False" Ratio="0.14945832119301777" StartRatio="0.14945832119301777">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="TCC" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="T" Name="Thr" ShortName="T">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID50" AminoAcid="T" IsStartCodon="False" Ratio="0.43911076975593105" StartRatio="0.43911076975593105">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="ACC" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID51" AminoAcid="T" IsStartCodon="False" Ratio="0.12748193662172158" StartRatio="0.12748193662172158">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="ACA" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID52" AminoAcid="T" IsStartCodon="False" Ratio="0.26908744381862659" StartRatio="0.26908744381862659">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="ACG" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID53" AminoAcid="T" IsStartCodon="False" Ratio="0.16431984980372077" StartRatio="0.16431984980372077">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="ACT" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="W" Name="Trp" ShortName="W">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID54" AminoAcid="W" IsStartCodon="False" Ratio="1" StartRatio="1">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="TGG" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="Y" Name="Tyr" ShortName="Y">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID55" AminoAcid="Y" IsStartCodon="False" Ratio="0.43246455097906822" StartRatio="0.43246455097906822">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="TAC" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID56" AminoAcid="Y" IsStartCodon="False" Ratio="0.56753544902093178" StartRatio="0.56753544902093178">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="TAT" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="V" Name="Val" ShortName="V">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID57" AminoAcid="V" IsStartCodon="False" Ratio="0.370540232112482" StartRatio="0.370540232112482">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="GTG" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID58" AminoAcid="V" IsStartCodon="False" Ratio="0.25825205090110459" StartRatio="0.25825205090110459">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="GTT" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID59" AminoAcid="V" IsStartCodon="False" Ratio="0.21724479469457184" StartRatio="0.21724479469457184">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="GTC" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID60" AminoAcid="V" IsStartCodon="False" Ratio="0.15396292229184161" StartRatio="0.15396292229184161">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="GTA" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+    <m:AminoAcid x:Key="*" Name="End" ShortName="*">
+      <m:AminoAcid.Codons>
+        <m:CodonUsage x:Name="__ReferenceID61" AminoAcid="*" IsStartCodon="False" Ratio="0.28402223833695917" StartRatio="0.28402223833695917">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="TGA" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID62" AminoAcid="*" IsStartCodon="False" Ratio="0.64660381919265164" StartRatio="0.64660381919265164">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="TAA" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+        <m:CodonUsage x:Name="__ReferenceID63" AminoAcid="*" IsStartCodon="False" Ratio="0.069373942470389166" StartRatio="0.069373942470389166">
+          <m:CodonUsage.Codon>
+            <m:Codon Name="TAG" />
+          </m:CodonUsage.Codon>
+        </m:CodonUsage>
+      </m:AminoAcid.Codons>
+    </m:AminoAcid>
+  </Translation.AminoTable>
+  <Translation.CodonTable>
+    <CodonTable>
+      <x:Reference>__ReferenceID0<x:Key>GCG</x:Key></x:Reference>
+      <x:Reference>__ReferenceID1<x:Key>GCA</x:Key></x:Reference>
+      <x:Reference>__ReferenceID2<x:Key>GCC</x:Key></x:Reference>
+      <x:Reference>__ReferenceID3<x:Key>GCT</x:Key></x:Reference>
+      <x:Reference>__ReferenceID4<x:Key>CGC</x:Key></x:Reference>
+      <x:Reference>__ReferenceID5<x:Key>CGA</x:Key></x:Reference>
+      <x:Reference>__ReferenceID6<x:Key>CGT</x:Key></x:Reference>
+      <x:Reference>__ReferenceID7<x:Key>AGG</x:Key></x:Reference>
+      <x:Reference>__ReferenceID8<x:Key>CGG</x:Key></x:Reference>
+      <x:Reference>__ReferenceID9<x:Key>AGA</x:Key></x:Reference>
+      <x:Reference>__ReferenceID10<x:Key>AAC</x:Key></x:Reference>
+      <x:Reference>__ReferenceID11<x:Key>AAT</x:Key></x:Reference>
+      <x:Reference>__ReferenceID12<x:Key>GAT</x:Key></x:Reference>
+      <x:Reference>__ReferenceID13<x:Key>GAC</x:Key></x:Reference>
+      <x:Reference>__ReferenceID14<x:Key>TGC</x:Key></x:Reference>
+      <x:Reference>__ReferenceID15<x:Key>TGT</x:Key></x:Reference>
+      <x:Reference>__ReferenceID16<x:Key>GAA</x:Key></x:Reference>
+      <x:Reference>__ReferenceID17<x:Key>GAG</x:Key></x:Reference>
+      <x:Reference>__ReferenceID18<x:Key>CAG</x:Key></x:Reference>
+      <x:Reference>__ReferenceID19<x:Key>CAA</x:Key></x:Reference>
+      <x:Reference>__ReferenceID20<x:Key>GGT</x:Key></x:Reference>
+      <x:Reference>__ReferenceID21<x:Key>GGC</x:Key></x:Reference>
+      <x:Reference>__ReferenceID22<x:Key>GGG</x:Key></x:Reference>
+      <x:Reference>__ReferenceID23<x:Key>GGA</x:Key></x:Reference>
+      <x:Reference>__ReferenceID24<x:Key>CAC</x:Key></x:Reference>
+      <x:Reference>__ReferenceID25<x:Key>CAT</x:Key></x:Reference>
+      <x:Reference>__ReferenceID26<x:Key>ATT</x:Key></x:Reference>
+      <x:Reference>__ReferenceID27<x:Key>ATC</x:Key></x:Reference>
+      <x:Reference>__ReferenceID28<x:Key>ATA</x:Key></x:Reference>
+      <x:Reference>__ReferenceID29<x:Key>TTG</x:Key></x:Reference>
+      <x:Reference>__ReferenceID30<x:Key>CTG</x:Key></x:Reference>
+      <x:Reference>__ReferenceID31<x:Key>CTC</x:Key></x:Reference>
+      <x:Reference>__ReferenceID32<x:Key>TTA</x:Key></x:Reference>
+      <x:Reference>__ReferenceID33<x:Key>CTT</x:Key></x:Reference>
+      <x:Reference>__ReferenceID34<x:Key>CTA</x:Key></x:Reference>
+      <x:Reference>__ReferenceID35<x:Key>AAA</x:Key></x:Reference>
+      <x:Reference>__ReferenceID36<x:Key>AAG</x:Key></x:Reference>
+      <x:Reference>__ReferenceID37<x:Key>ATG</x:Key></x:Reference>
+      <x:Reference>__ReferenceID38<x:Key>TTC</x:Key></x:Reference>
+      <x:Reference>__ReferenceID39<x:Key>TTT</x:Key></x:Reference>
+      <x:Reference>__ReferenceID40<x:Key>CCC</x:Key></x:Reference>
+      <x:Reference>__ReferenceID41<x:Key>CCG</x:Key></x:Reference>
+      <x:Reference>__ReferenceID42<x:Key>CCT</x:Key></x:Reference>
+      <x:Reference>__ReferenceID43<x:Key>CCA</x:Key></x:Reference>
+      <x:Reference>__ReferenceID44<x:Key>AGC</x:Key></x:Reference>
+      <x:Reference>__ReferenceID45<x:Key>TCA</x:Key></x:Reference>
+      <x:Reference>__ReferenceID46<x:Key>TCT</x:Key></x:Reference>
+      <x:Reference>__ReferenceID47<x:Key>AGT</x:Key></x:Reference>
+      <x:Reference>__ReferenceID48<x:Key>TCG</x:Key></x:Reference>
+      <x:Reference>__ReferenceID49<x:Key>TCC</x:Key></x:Reference>
+      <x:Reference>__ReferenceID50<x:Key>ACC</x:Key></x:Reference>
+      <x:Reference>__ReferenceID51<x:Key>ACA</x:Key></x:Reference>
+      <x:Reference>__ReferenceID52<x:Key>ACG</x:Key></x:Reference>
+      <x:Reference>__ReferenceID53<x:Key>ACT</x:Key></x:Reference>
+      <x:Reference>__ReferenceID54<x:Key>TGG</x:Key></x:Reference>
+      <x:Reference>__ReferenceID55<x:Key>TAC</x:Key></x:Reference>
+      <x:Reference>__ReferenceID56<x:Key>TAT</x:Key></x:Reference>
+      <x:Reference>__ReferenceID57<x:Key>GTG</x:Key></x:Reference>
+      <x:Reference>__ReferenceID58<x:Key>GTT</x:Key></x:Reference>
+      <x:Reference>__ReferenceID59<x:Key>GTC</x:Key></x:Reference>
+      <x:Reference>__ReferenceID60<x:Key>GTA</x:Key></x:Reference>
+      <x:Reference>__ReferenceID61<x:Key>TGA</x:Key></x:Reference>
+      <x:Reference>__ReferenceID62<x:Key>TAA</x:Key></x:Reference>
+      <x:Reference>__ReferenceID63<x:Key>TAG</x:Key></x:Reference>
+    </CodonTable>
+  </Translation.CodonTable>
+</Translation>

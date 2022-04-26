@@ -1,4 +1,5 @@
-﻿Public Class NumberBox
+﻿
+Public Class NumberBox
     Inherits System.Windows.Controls.TextBox
     Public Sub New()
         Text = "0"
@@ -13,9 +14,9 @@
             SetValue(AllowDecimalProperty, value)
         End Set
     End Property
-    Public Shared ReadOnly AllowDecimalProperty As DependencyProperty = _
-                           DependencyProperty.Register("AllowDecimal", _
-                           GetType(Boolean), GetType(NumberBox), _
+    Public Shared ReadOnly AllowDecimalProperty As DependencyProperty =
+                           DependencyProperty.Register("AllowDecimal",
+                           GetType(Boolean), GetType(NumberBox),
                            New PropertyMetadata(True, New PropertyChangedCallback(AddressOf SharedAllowDecimalChanged)))
     Private Shared Sub SharedAllowDecimalChanged(d As DependencyObject, e As DependencyPropertyChangedEventArgs)
         DirectCast(d, NumberBox).AllowDecimalChanged(d, e)
@@ -34,9 +35,9 @@
             SetValue(AllowNegativeProperty, value)
         End Set
     End Property
-    Public Shared ReadOnly AllowNegativeProperty As DependencyProperty = _
-                           DependencyProperty.Register("AllowNegative", _
-                           GetType(Boolean), GetType(NumberBox), _
+    Public Shared ReadOnly AllowNegativeProperty As DependencyProperty =
+                           DependencyProperty.Register("AllowNegative",
+                           GetType(Boolean), GetType(NumberBox),
                            New PropertyMetadata(True, New PropertyChangedCallback(AddressOf SharedAllowNegativeChanged)))
     Private Shared Sub SharedAllowNegativeChanged(d As DependencyObject, e As DependencyPropertyChangedEventArgs)
         DirectCast(d, NumberBox).AllowNegativeChanged(d, e)
@@ -46,25 +47,26 @@
             Text = Text.Replace("-", "")
         End If
     End Sub
- 
+
     Protected Overrides Sub OnKeyDown(e As System.Windows.Input.KeyEventArgs)
         Dim sel As Integer
+
         Select Case e.Key
-            Case Windows.Input.Key.Subtract, Windows.Input.Key.OemMinus
+            Case System.Windows.Input.Key.Subtract, System.Windows.Input.Key.OemMinus
                 If AllowNegative AndAlso Not Text.Contains("-") Then
                     sel = SelectionStart
                     Text = "-" + Text
                     SelectionStart = IIf(sel + 1 < Text.Length, sel + 1, Text.Length)
                 End If
                 e.Handled = True
-            Case Windows.Input.Key.Add, Windows.Input.Key.OemPlus
+            Case System.Windows.Input.Key.Add, System.Windows.Input.Key.OemPlus
                 If Text.Contains("-") Then
                     sel = SelectionStart
                     Text = Text.Replace("-", "")
                     SelectionStart = IIf(sel - 1 > -1, sel - 1, 0)
                 End If
                 e.Handled = True
-            Case Windows.Input.Key.Decimal, Windows.Input.Key.OemPeriod
+            Case System.Windows.Input.Key.Decimal, System.Windows.Input.Key.OemPeriod
                 If AllowDecimal Then
                     sel = SelectionStart
                     Dim di As Integer = Text.IndexOf(".")
@@ -73,11 +75,11 @@
                         SelectionStart = IIf(di < sel, sel - 1, sel)
                     End If
                 End If
-            Case Windows.Input.Key.Delete
+            Case System.Windows.Input.Key.Delete
 
-            Case Windows.Input.Key.Back
+            Case System.Windows.Input.Key.Back
 
-            Case Windows.Input.Key.D0, Windows.Input.Key.D1, Windows.Input.Key.D2, Windows.Input.Key.D3, Windows.Input.Key.D4, Windows.Input.Key.D5, Windows.Input.Key.D6, Windows.Input.Key.D7, Windows.Input.Key.D8, Windows.Input.Key.D9
+            Case System.Windows.Input.Key.D0, System.Windows.Input.Key.D1, System.Windows.Input.Key.D2, System.Windows.Input.Key.D3, System.Windows.Input.Key.D4, System.Windows.Input.Key.D5, System.Windows.Input.Key.D6, System.Windows.Input.Key.D7, System.Windows.Input.Key.D8, System.Windows.Input.Key.D9
             Case Key.NumPad0 To Key.NumPad9
             Case Else
                 e.Handled = True
@@ -99,9 +101,9 @@
             SetValue(NumberTypeProperty, value)
         End Set
     End Property
-    Public Shared ReadOnly NumberTypeProperty As DependencyProperty = _
-                           DependencyProperty.Register("NumberType", _
-                           GetType(Type), GetType(NumberBox), _
+    Public Shared ReadOnly NumberTypeProperty As DependencyProperty =
+                           DependencyProperty.Register("NumberType",
+                           GetType(Type), GetType(NumberBox),
                            New PropertyMetadata(GetType(Integer), New PropertyChangedCallback(AddressOf SharedNumberTypeChanged)))
     Private Shared Sub SharedNumberTypeChanged(d As DependencyObject, e As DependencyPropertyChangedEventArgs)
         DirectCast(d, NumberBox).NumberTypeChanged(d, e)
@@ -121,9 +123,9 @@
             SetValue(ValueProperty, value)
         End Set
     End Property
-    Public Shared ReadOnly ValueProperty As DependencyProperty = _
-                            DependencyProperty.Register("Value", _
-                            GetType(Object), GetType(NumberBox), _
+    Public Shared ReadOnly ValueProperty As DependencyProperty =
+                            DependencyProperty.Register("Value",
+                            GetType(Object), GetType(NumberBox),
                             New FrameworkPropertyMetadata(Nothing, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, New PropertyChangedCallback(AddressOf SharedValueChanged)))
     Private Shared Sub SharedValueChanged(d As DependencyObject, e As DependencyPropertyChangedEventArgs)
         DirectCast(d, NumberBox).ValueChanged(d, e)

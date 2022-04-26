@@ -513,7 +513,9 @@ Public Class NodeViewModel
     Public Shared Sub FindAnnealing(x As NodeViewModel, y As NodeViewModel)
         Dim xTail As String = x.Tail
         Dim yHead As String = y.Head
-        Dim xy = Nuctions.FacingSequenceAnnealingSearch(xTail, yHead, 12, 250)
+        Dim xLength = x.SourceGeneFile.Length
+        Dim yLength = y.SourceGeneFile.Length
+        Dim xy = Nuctions.FacingSequenceAnnealingSearch(xTail, yHead, 12, Math.Min(xLength, yLength) / 2)
 
         Dim MinOptimizedLength As Integer = x._OperationInfo.MinLength
         Dim MinOptimizedTm As Single = x._OperationInfo.MinTmTemperature
